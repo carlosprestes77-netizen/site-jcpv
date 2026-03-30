@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JCPV Advocacia | A defesa técnica do seu patrimônio</title>
+    <title>JCPV Advocacia | A defesa técnica do seu património</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -486,7 +486,7 @@
                 <!-- Usando a capa do livro que você enviou -->
                 <div class="relative group">
                     <div class="absolute inset-0 bg-accent blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                    <img src="Captura de Tela 2026-02-25 às 01.43.38.jpg" alt="How Innovation Works - Referência" class="relative z-10 w-64 rounded-sm shadow-2xl rotate-[-2deg] group-hover:rotate-0 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600';">
+                    <img src="livro.jpg" alt="How Innovation Works - Referência" class="relative z-10 w-64 rounded-sm shadow-2xl rotate-[-2deg] group-hover:rotate-0 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600';">
                 </div>
             </div>
             <div class="w-full md:w-2/3 reveal text-center md:text-left">
@@ -495,10 +495,10 @@
                 <p class="text-cream/70 text-lg leading-relaxed mb-8">
                     Não lutamos com as ferramentas do passado. Para vencer o sistema bancário, o nosso escritório debruça-se sobre a inovação e o pensamento crítico constante. Se quer entender um pouco mais sobre como estruturamos a sua defesa contra abusos, preparamos um material inicial gratuito para si.
                 </p>
-                <button class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded transition-colors inline-flex items-center gap-2 text-sm font-medium">
+                <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20receber%20o%20material%20gratuito%20sobre%20inova%C3%A7%C3%A3o%20e%20defesa%20contra%20abusos%20banc%C3%A1rios." target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded transition-colors inline-flex items-center gap-2 text-sm font-medium w-fit">
                     <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    Solicitar Material de Apoio
-                </button>
+                    Solicitar Material pelo WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -507,17 +507,10 @@
     <section id="especialista" class="py-32 relative bg-surface border-y border-ink/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <div class="reveal flex-1 relative order-2 lg:order-1 group">
+                <div class="reveal flex-1 relative order-2 lg:order-1">
                     <div class="relative h-[650px] w-full rounded-sm overflow-hidden bg-cream p-4 border border-ink/5">
                         
-                        <!-- Botão de Upload Dinâmico -->
-                        <input type="file" id="photo-upload" class="hidden" accept="image/*">
-                        <button id="upload-btn" class="absolute top-8 right-8 z-20 bg-black/60 hover:bg-accent backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-all opacity-0 group-hover:opacity-100 shadow-lg cursor-pointer" title="Trocar Foto">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            Alterar Foto
-                        </button>
-
-                        <img id="especialista-img" src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover object-top rounded shadow-inner transition-opacity duration-300" style="filter: contrast(1.05) brightness(0.95);">
+                        <img src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover object-top rounded shadow-inner" style="filter: contrast(1.05) brightness(0.95);">
                         
                         <div class="absolute bottom-10 left-10 right-10 bg-white/90 backdrop-blur-md p-6 border-l-4 border-l-accent shadow-xl">
                             <p class="font-display text-lg text-ink font-bold mb-1">Dr. José Carlos Prestes Vieira</p>
@@ -868,27 +861,6 @@
             const mensagem = `Olá, o meu nome é *${nome}*. Gostaria de agendar um diagnóstico estratégico sigiloso.%0A%0A*Motivo Principal:* ${assunto}%0A%0AVim através do website.`;
             
             window.open(`https://wa.me/5544991492775?text=${mensagem}`, '_blank');
-        });
-
-        // Funcionalidade de Upload de Foto Dinâmica
-        const uploadBtn = document.getElementById('upload-btn');
-        const photoUpload = document.getElementById('photo-upload');
-        const especialistaImg = document.getElementById('especialista-img');
-
-        uploadBtn.addEventListener('click', () => {
-            photoUpload.click();
-        });
-
-        photoUpload.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const imageUrl = URL.createObjectURL(file);
-                especialistaImg.style.opacity = '0.5';
-                setTimeout(() => {
-                    especialistaImg.src = imageUrl;
-                    especialistaImg.style.opacity = '1';
-                }, 150);
-            }
         });
 
     </script>
