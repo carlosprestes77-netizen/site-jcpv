@@ -26,10 +26,10 @@
         body { background-color: #1A1918; color: #F9F8F6; }
         .link-card {
             background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(163, 145, 113, 0.2);
-            backdrop-filter: blur(10px); transition: all 0.3s ease;
+            backdrop-filter: blur(10px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .link-card:hover {
-            background: rgba(163, 145, 113, 0.1); border-color: rgba(163, 145, 113, 0.5);
+            background: rgba(163, 145, 113, 0.15); border-color: rgba(163, 145, 113, 0.6);
             transform: translateY(-3px);
         }
     </style>
@@ -41,40 +41,44 @@
 
     <div class="w-full max-w-md relative z-10 flex flex-col items-center">
         
-        <!-- Foto de Perfil (Puxa automaticamente a foto que já está no seu GitHub) -->
-        <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-accent mb-6 shadow-[0_0_20px_rgba(163,145,113,0.2)] p-1">
-            <img src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover rounded-full" onerror="this.src='https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400'">
+        <!-- Foto de Perfil Oficial (IMG_2650.jpg) -->
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-accent mb-6 shadow-[0_0_30px_rgba(163,145,113,0.3)] p-1 bg-ink">
+            <img src="IMG_2650.jpg" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover rounded-full">
         </div>
 
-        <!-- Títulos -->
-        <h1 class="font-display text-2xl font-bold text-white mb-1">Dr. José Carlos P. Vieira</h1>
-        <p class="text-accentLight text-sm font-medium tracking-widest uppercase mb-2">OAB/PR 118.596</p>
-        <p class="text-gray-400 text-center text-sm mb-8 px-4">Especialista em Lei do Superendividamento e Defesa Patrimonial contra Abusos Bancários.</p>
+        <!-- Títulos de Autoridade -->
+        <div class="text-center mb-10">
+            <h1 class="font-display text-3xl font-bold text-white mb-2">Dr. José Carlos P. Vieira</h1>
+            <p class="text-accentLight text-sm font-bold tracking-[0.2em] uppercase mb-3">OAB/PR 118.596</p>
+            <p class="text-gray-400 text-sm leading-relaxed px-4">Especialista na Lei do Superendividamento e Defesa Estratégica do Patrimônio.</p>
+        </div>
 
         <!-- Botões de Links -->
         <div class="w-full flex flex-col gap-4">
             
-            <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram.%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20sigiloso." class="link-card w-full p-4 rounded-xl flex items-center justify-center gap-3 relative group overflow-hidden">
-                <div class="absolute inset-0 bg-accent/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            <!-- Link do WhatsApp direto -->
+            <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram.%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20sigiloso." target="_blank" rel="noopener noreferrer" class="link-card w-full p-5 rounded-xl flex items-center justify-center gap-3 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-accent/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 <svg class="w-6 h-6 text-[#25D366] relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <span class="font-medium text-white relative z-10">Agendar Diagnóstico Sigiloso</span>
+                <span class="font-bold text-white relative z-10 tracking-wide">Agendar Diagnóstico Sigiloso</span>
             </a>
 
-            <!-- O LINK OFICIAL DO SITE JÁ ESTÁ AQUI -->
-            <a href="https://www.jcpvadvocacia.com.br" class="link-card w-full p-4 rounded-xl flex items-center justify-center gap-3">
+            <!-- Link do Site Principal (Ajustado para abrir corretamente) -->
+            <a href="https://www.jcpvadvocacia.com.br" target="_blank" rel="noopener noreferrer" class="link-card w-full p-5 rounded-xl flex items-center justify-center gap-3">
                 <svg class="w-5 h-5 text-accentLight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                 <span class="font-medium text-white">Acessar Site Oficial</span>
             </a>
 
-            <a href="https://www.jcpvadvocacia.com.br/#servicos" class="link-card w-full p-4 rounded-xl flex items-center justify-center gap-3">
+            <!-- Áreas de Atuação (Link direto para a secção do site) -->
+            <a href="https://www.jcpvadvocacia.com.br/#servicos" target="_blank" rel="noopener noreferrer" class="link-card w-full p-5 rounded-xl flex items-center justify-center gap-3">
                 <svg class="w-5 h-5 text-accentLight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="font-medium text-white">Como protegemos o seu patrimônio?</span>
+                <span class="font-medium text-white">Áreas de Atuação</span>
             </a>
 
         </div>
 
         <!-- Logo JCPV Rodapé -->
-        <div class="mt-16 text-white/30 flex flex-col items-center">
+        <div class="mt-20 text-white/20 flex flex-col items-center">
             <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-16 h-16">
                 <g fill="currentColor">
                     <rect x="66" y="15" width="4" height="85" />
@@ -87,7 +91,7 @@
                     <ellipse cx="125" cy="100" rx="10" ry="3" fill="none" stroke="currentColor" stroke-width="1.5" />
                 </g>
             </svg>
-            <p class="text-[10px] tracking-[0.2em] font-bold mt-2">JCPV ADVOCACIA</p>
+            <p class="text-[10px] tracking-[0.3em] font-bold mt-2">JCPV ADVOCACIA</p>
         </div>
 
     </div>
