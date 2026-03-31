@@ -801,6 +801,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <script>
+        // Prevenir que o navegador guarde a posição do scroll ao recarregar a página
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+
         gsap.registerPlugin(ScrollTrigger);
 
         const headerBg = document.getElementById('header-bg');
