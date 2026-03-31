@@ -10,10 +10,20 @@
     <meta name="keywords" content="advogado bancário, superendividamento, defesa do patrimônio, abusos bancários, JCPV advocacia, advogado maringá">
     <meta name="author" content="Dr. José Carlos Prestes Vieira">
     
-    <!-- Open Graph (Para ficar bonito quando partilhar no WhatsApp/Facebook) -->
+    <!-- Open Graph (Para partilhas no WhatsApp/Facebook) -->
     <meta property="og:title" content="JCPV Advocacia | A defesa técnica do seu patrimônio">
     <meta property="og:description" content="Escritório especializado na defesa contra abusos bancários e reestruturação de passivos.">
     <meta property="og:type" content="website">
+
+    <!-- ======================================================= -->
+    <!-- ÁREA PARA O GESTOR DE TRÁFEGO (INSERIR PIXELS/TAGS AQUI) -->
+    <!-- ======================================================= -->
+    
+    <!-- Google Tag Manager (gtag.js) - COLE AQUI O SCRIPT DO GOOGLE -->
+    
+    <!-- Meta Pixel Code - COLE AQUI O SCRIPT DO FACEBOOK -->
+
+    <!-- ======================================================= -->
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,56 +75,32 @@
 
     <!-- Custom CSS -->
     <style>
-        body {
-            background-color: #F9F8F6;
-            color: #1A1918;
-            overflow-x: hidden;
-        }
+        body { background-color: #F9F8F6; color: #1A1918; overflow-x: hidden; }
         
         .noise-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.04;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 9999; opacity: 0.04;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
         .glass-header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(163, 145, 113, 0.2);
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(163, 145, 113, 0.2);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 32px -8px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px -8px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
-            border-color: rgba(163, 145, 113, 0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(163, 145, 113, 0.15);
-            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(163, 145, 113, 0.4); transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(163, 145, 113, 0.15); background: rgba(255, 255, 255, 0.9);
         }
 
-        .ambient-glow {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .stack-container {
-            position: relative;
-        }
-
+        .ambient-glow { position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0; pointer-events: none; }
+        .stack-container { position: relative; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F9F8F6; }
         ::-webkit-scrollbar-thumb { background: #D1CCC4; border-radius: 4px; }
@@ -122,45 +108,27 @@
 
         .text-gradient {
             background: linear-gradient(to right, #A39171, #7A6A4F);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: sweep .5s ease-in-out; }
-        @keyframes sweep {
-            0%    {opacity: 0; transform: translateY(-10px)}
-            100%  {opacity: 1; transform: translateY(0)}
-        }
+        @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
 
         .typing-caret {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background-color: #A39171;
-            vertical-align: middle;
-            animation: blink 1s step-end infinite;
+            display: inline-block; width: 2px; height: 1.2em; background-color: #A39171;
+            vertical-align: middle; animation: blink 1s step-end infinite;
         }
         @keyframes blink { 50% { opacity: 0; } }
 
-        /* Animação Logo Hover */
-        .logo-svg:hover {
-            transform: scale(1.02);
-            transition: transform 0.3s ease;
-        }
-        .logo-svg {
-            transition: transform 0.3s ease;
-        }
-        
-        /* Oculta scrollbar na row de depoimentos */
-        .hide-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scroll {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .logo-svg:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+        .logo-svg { transition: transform 0.3s ease; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Modal Styles */
+        .modal-open { overflow: hidden; }
     </style>
 </head>
 <body class="antialiased selection:bg-accent selection:text-white font-sans relative">
@@ -173,7 +141,6 @@
         
         <div id="header-inner" class="relative max-w-7xl mx-auto h-24 px-6 lg:px-8 flex items-center justify-between rounded-full transition-all duration-500 pointer-events-auto">
             
-            <!-- LOGO VETORIAL EXATA -->
             <a href="#" class="logo-svg block h-[75px] relative z-10 shrink-0 flex items-center text-brandBlue hover:text-accent transition-colors duration-300 py-1">
                 <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto">
                     <g fill="currentColor">
@@ -199,8 +166,7 @@
                 <a href="#especialista" class="hover:text-accent transition-colors">O Escritório</a>
             </nav>
 
-            <!-- CTA do Header com ligeiro pulso para atrair cliques -->
-            <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-accent hover:bg-ink transition-colors rounded-full tracking-wide shadow-lg shadow-accent/20 hover:animate-none">
+            <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-accent hover:bg-ink transition-colors rounded-full tracking-wide shadow-lg shadow-accent/20 hover:animate-none">
                 Solicitar Análise
             </a>
             
@@ -222,7 +188,7 @@
             <a href="#provas" class="mobile-link hover:text-accent transition-colors">Resultados</a>
             <a href="#especialista" class="mobile-link hover:text-accent transition-colors">O Escritório</a>
         </nav>
-        <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="mt-12 inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-accent rounded-full shadow-lg shadow-accent/20">
+        <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track mt-12 inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-accent rounded-full shadow-lg shadow-accent/20">
             Solicitar Análise Agora
         </a>
     </div>
@@ -230,14 +196,12 @@
     <!-- Hero Section Premium Centered -->
     <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-ink">
         
-        <!-- Background Premium (Pilares Clássicos) com Overlay Escuro -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1505664177922-90226dd18c5e?auto=format&fit=crop&q=80&w=2000" alt="Arquitetura Premium" class="w-full h-full object-cover opacity-20">
             <div class="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/80 to-ink"></div>
             <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#1A1918_80%)]"></div>
         </div>
 
-        <!-- Marca de Água Gigante (Logomarca JCPV) -->
         <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
             <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] text-accentLight">
                 <g fill="currentColor">
@@ -253,7 +217,6 @@
             </svg>
         </div>
 
-        <!-- Conteúdo Principal Centrado -->
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center mt-10">
             <div class="hero-el inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-accentLight text-xs font-bold tracking-widest uppercase shadow-sm">
                 <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
@@ -270,7 +233,7 @@
             </p>
             
             <div class="hero-el flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-                <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="w-full sm:w-auto px-8 py-4 bg-accent text-white font-medium text-lg rounded-sm hover:bg-white hover:text-ink transition-all duration-300 shadow-[0_10px_30px_rgba(163,145,113,0.3)]">
+                <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track w-full sm:w-auto px-8 py-4 bg-accent text-white font-medium text-lg rounded-sm hover:bg-white hover:text-ink transition-all duration-300 shadow-[0_10px_30px_rgba(163,145,113,0.3)]">
                     Solicitar Análise de Viabilidade
                 </a>
             </div>
@@ -291,13 +254,12 @@
             </div>
         </div>
         
-        <!-- Indicador de Scroll -->
         <a href="#dor" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:flex flex-col items-center gap-4 opacity-60 hover:opacity-100 transition-opacity z-20 group">
             <svg class="w-6 h-6 text-white group-hover:text-accentLight animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </a>
     </section>
 
-    <!-- Métricas de Autoridade (Estatísticas de Sucesso) -->
+    <!-- Métricas de Autoridade -->
     <section class="py-12 bg-white relative z-20 border-y border-ink/5">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-ink/10">
@@ -317,18 +279,14 @@
         </div>
     </section>
 
-    <!-- A Marca e a Filosofia (Substitui a secção do Xadrez) -->
+    <!-- A Marca e a Filosofia -->
     <section class="py-24 relative bg-ink border-t border-white/10 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(163,145,113,0.1)_0%,transparent_50%)]"></div>
         <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16">
             
             <div class="w-full md:w-1/2 flex justify-center reveal">
-                <!-- Símbolo da Marca JCPV Imponente -->
                 <div class="relative group p-8">
-                    <!-- Brilho de fundo -->
                     <div class="absolute inset-0 bg-accent blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700 rounded-full"></div>
-                    
-                    <!-- Logo Vetorial Dourada/Accent -->
                     <div class="relative text-accentLight/80 group-hover:text-accentLight transition-all duration-500 transform group-hover:scale-105 drop-shadow-2xl">
                         <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-64 h-64 md:w-80 md:h-80">
                             <g fill="currentColor">
@@ -354,7 +312,7 @@
                 <p class="text-cream/70 text-lg leading-relaxed mb-8">
                     Instituições financeiras apostam na intimidação. Nós apostamos no rigor técnico. Rejeitamos acordos padronizados que aprisionam o cliente. O nosso método baseia-se em analisar minuciosamente os seus contratos, identificar abusos de juros e usar a força da Lei do Superendividamento para construir uma barreira sólida entre os bancos e os seus bens.
                 </p>
-                <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20iniciar%20a%20prote%C3%A7%C3%A3o%20do%20meu%20patrim%C3%B4nio." target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded transition-colors inline-flex items-center gap-3 text-sm font-medium w-fit group">
+                <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20iniciar%20a%20prote%C3%A7%C3%A3o%20do%20meu%20patrim%C3%B4nio." target="_blank" class="whatsapp-track bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded transition-colors inline-flex items-center gap-3 text-sm font-medium w-fit group">
                     Proteger o Meu Patrimônio
                     <svg class="w-5 h-5 text-accent transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
@@ -424,7 +382,7 @@
                         <div id="ai-result" class="hidden mt-4 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md">
                             <p class="text-white font-mono text-sm leading-relaxed">
                                 <strong class="text-accentLight">ALERTA DETECTADO:</strong> Alta probabilidade de violação do mínimo existencial e incidência de juros abusivos. O seu caso tem aderência à Lei do Superendividamento (Lei 14.181/2021).<br><br>
-                                <a href="https://wa.me/5544991492775?text=Fiz%20o%20diagn%C3%B3stico%20no%20site%20e%20gostaria%20de%20avalia%C3%A7%C3%A3o." target="_blank" class="inline-block mt-3 text-accent hover:text-white underline decoration-accent underline-offset-4">Plantão Jurídico Urgente →</a>
+                                <a href="https://wa.me/5544991492775?text=Fiz%20o%20diagn%C3%B3stico%20no%20site%20e%20gostaria%20de%20avalia%C3%A7%C3%A3o." target="_blank" class="whatsapp-track inline-block mt-3 text-accent hover:text-white underline decoration-accent underline-offset-4">Plantão Jurídico Urgente →</a>
                             </p>
                         </div>
                     </div>
@@ -684,7 +642,7 @@
                     O tempo joga a favor dos juros. Fale com o Dr. José Carlos Prestes e agende o seu diagnóstico estratégico hoje mesmo.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#20bd5a] hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.2)]">
+                    <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#20bd5a] hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.2)]">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         Fale pelo WhatsApp
                     </a>
@@ -728,12 +686,11 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-accent hover:bg-accentLight text-white font-medium py-4 rounded transition-colors duration-300 relative overflow-hidden group">
+                    <button type="submit" class="whatsapp-track w-full bg-accent hover:bg-accentLight text-white font-medium py-4 rounded transition-colors duration-300 relative overflow-hidden group">
                         <span class="relative z-10">Enviar Solicitação Urgente</span>
                         <div class="absolute inset-0 h-full w-full bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                     </button>
                     
-                    <!-- Selo de Confiança OAB em vez de apenas texto -->
                     <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-center gap-3 text-gray-400 text-xs">
                         <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         <span>Proteção Absoluta de Dados e Sigilo Profissional (Art. 36, CED OAB)</span>
@@ -748,7 +705,6 @@
     <footer class="bg-black border-t border-white/10 py-12">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
             
-            <!-- LOGO VETORIAL NO RODAPÉ -->
             <div class="h-16 opacity-80 hover:opacity-100 transition-all flex items-center text-white">
                 <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto">
                     <g fill="currentColor">
@@ -770,25 +726,23 @@
                 <p>&copy; 2026 JCPV Advocacia. Dr. José Carlos Prestes Vieira.</p>
                 <p class="text-xs">OAB/PR 118.596 | Sede: Maringá/PR - Atuação Nacional.</p>
                 
-                <!-- Links Legais Obrigatórios para Google/Facebook Ads -->
+                <!-- Links Legais Obrigatórios para Google/Facebook Ads (Agora abrem Janelas Pop-up) -->
                 <div class="mt-4 flex flex-wrap justify-center md:justify-end gap-4 text-xs text-gray-600">
-                    <a href="#" class="hover:text-accent transition-colors">Política de Privacidade</a>
+                    <button onclick="toggleModal('privacyModal')" class="hover:text-accent transition-colors">Política de Privacidade</button>
                     <span>•</span>
-                    <a href="#" class="hover:text-accent transition-colors">Termos de Uso</a>
+                    <button onclick="toggleModal('termsModal')" class="hover:text-accent transition-colors">Termos de Uso</button>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- FAB Enriquecido (WhatsApp) COM PULSO DE "ONLINE" -->
+    <!-- FAB Enriquecido (WhatsApp) -->
     <div class="fixed bottom-6 right-6 z-50 flex items-center group">
-        <!-- Tooltip Desktop -->
         <div class="hidden md:block mr-4 bg-white text-ink text-sm font-bold px-4 py-2 rounded-full shadow-lg opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 border border-ink/5 pointer-events-none">
             Fale com o Advogado Agora
         </div>
         
-        <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" rel="noopener noreferrer" class="relative bg-[#25D366] text-white p-4 rounded-full hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.3)] flex items-center justify-center">
-            <!-- Sinalizador Verde "Online" -->
+        <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" rel="noopener noreferrer" class="whatsapp-track relative bg-[#25D366] text-white p-4 rounded-full hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.3)] flex items-center justify-center">
             <span class="absolute top-0 right-0 flex h-3 w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-200 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-green-100 border border-green-500"></span>
@@ -797,23 +751,56 @@
         </a>
     </div>
 
+    <!-- Modais Legais (Obrigatórios para o Google Ads) -->
+    <div id="privacyModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative">
+            <button onclick="toggleModal('privacyModal')" class="absolute top-4 right-4 text-gray-500 hover:text-ink"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 class="font-display text-2xl font-bold text-ink mb-4">Política de Privacidade</h3>
+            <div class="text-sm text-muted space-y-4">
+                <p>A JCPV Advocacia respeita a sua privacidade. Esta política demonstra o nosso compromisso com a proteção de dados (LGPD).</p>
+                <p><strong>1. Coleta de Dados:</strong> Coletamos apenas as informações fornecidas voluntariamente por si (nome, telefone, caso jurídico) através dos botões de WhatsApp e formulários do nosso site.</p>
+                <p><strong>2. Uso das Informações:</strong> As suas informações são utilizadas exclusivamente para o contactar de volta e avaliar a viabilidade jurídica do seu caso. Garantimos absoluto sigilo profissional, nos termos do Código de Ética da OAB.</p>
+                <p><strong>3. Compartilhamento:</strong> Não vendemos, alugamos ou compartilhamos as suas informações com terceiros sob nenhuma circunstância.</p>
+                <p><strong>4. Segurança:</strong> Adotamos medidas de segurança rígidas para proteger os seus dados contra acessos não autorizados.</p>
+            </div>
+            <button onclick="toggleModal('privacyModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full">Compreendido</button>
+        </div>
+    </div>
+
+    <div id="termsModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative">
+            <button onclick="toggleModal('termsModal')" class="absolute top-4 right-4 text-gray-500 hover:text-ink"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 class="font-display text-2xl font-bold text-ink mb-4">Termos de Uso</h3>
+            <div class="text-sm text-muted space-y-4">
+                <p>Ao aceder ao site da JCPV Advocacia, concorda em cumprir estes termos de serviço.</p>
+                <p><strong>1. Uso de Informações:</strong> O conteúdo deste site é puramente informativo e não substitui uma consulta jurídica formal. A leitura deste material não estabelece uma relação cliente-advogado.</p>
+                <p><strong>2. O Analisador de Viabilidade:</strong> A ferramenta de "Diagnóstico Prévio" (IA) presente no site serve apenas como simulação baseada em padrões de mercado. O resultado não é uma promessa de causa ganha nem um parecer legal vinculativo.</p>
+                <p><strong>3. Propriedade Intelectual:</strong> Todo o conteúdo, logotipos e textos deste site são propriedade da JCPV Advocacia. É proibida a reprodução sem autorização.</p>
+            </div>
+            <button onclick="toggleModal('termsModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full">Aceitar e Fechar</button>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <script>
-        // Prevenir que o navegador guarde a posição do scroll ao recarregar a página
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
+        // Restauração de Scroll Manual
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        window.onload = function() { window.scrollTo(0, 0); };
+
+        // Funções Modais
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            if(modal) {
+                modal.classList.toggle('hidden');
+                document.body.classList.toggle('modal-open');
+            }
         }
-        window.onload = function() {
-            window.scrollTo(0, 0);
-        };
 
         gsap.registerPlugin(ScrollTrigger);
 
         const headerBg = document.getElementById('header-bg');
-        const headerInner = document.getElementById('header-inner');
-        
         window.addEventListener('scroll', () => {
             if (!headerBg) return;
             if (window.scrollY > 50) {
@@ -825,51 +812,25 @@
             }
         });
 
-        gsap.from(".hero-el", {
-            y: 40,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power3.out",
-            delay: 0.2
-        });
+        gsap.from(".hero-el", { y: 40, opacity: 0, duration: 1.2, stagger: 0.15, ease: "power3.out", delay: 0.2 });
 
         gsap.utils.toArray('.reveal').forEach(section => {
-            gsap.from(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
-            });
+            gsap.from(section, { scrollTrigger: { trigger: section, start: "top 85%", toggleActions: "play none none reverse" }, y: 50, opacity: 0, duration: 1, ease: "power2.out" });
         });
 
-        // Animação dos Contadores (Métricas)
         const counters = document.querySelectorAll('.counter');
         if (counters.length > 0) {
             ScrollTrigger.create({
-                trigger: '.counter',
-                start: 'top 90%',
-                once: true,
+                trigger: '.counter', start: 'top 90%', once: true,
                 onEnter: () => {
                     counters.forEach(counter => {
                         const target = +counter.getAttribute('data-target');
-                        const duration = 2000; // 2 seconds
-                        const increment = target / (duration / 16); // 60fps
-                        
+                        const increment = target / (2000 / 16); 
                         let current = 0;
                         const updateCounter = () => {
                             current += increment;
-                            if(current < target) {
-                                counter.innerText = Math.ceil(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.innerText = target;
-                            }
+                            if(current < target) { counter.innerText = Math.ceil(current); requestAnimationFrame(updateCounter); } 
+                            else { counter.innerText = target; }
                         };
                         updateCounter();
                     });
@@ -880,11 +841,7 @@
         const detailsElements = document.querySelectorAll('details');
         detailsElements.forEach((targetDetail) => {
             targetDetail.addEventListener('click', () => {
-                detailsElements.forEach((detail) => {
-                    if (detail !== targetDetail) {
-                        detail.removeAttribute('open');
-                    }
-                });
+                detailsElements.forEach((detail) => { if (detail !== targetDetail) { detail.removeAttribute('open'); } });
             });
         });
 
@@ -896,23 +853,10 @@
 
         if (aiBtn && aiInput && aiOutput && aiLoader && aiResult) {
             aiBtn.addEventListener('click', () => {
-                if(aiInput.value.trim() === '') {
-                    aiInput.focus();
-                    return;
-                }
-                
-                aiBtn.style.display = 'none';
-                aiInput.disabled = true;
-                aiInput.classList.add('opacity-50');
-                
-                aiOutput.classList.remove('hidden');
-                aiLoader.classList.remove('hidden');
-                aiResult.classList.add('hidden');
-
-                setTimeout(() => {
-                    aiLoader.classList.add('hidden');
-                    aiResult.classList.remove('hidden');
-                }, 2500);
+                if(aiInput.value.trim() === '') { aiInput.focus(); return; }
+                aiBtn.style.display = 'none'; aiInput.disabled = true; aiInput.classList.add('opacity-50');
+                aiOutput.classList.remove('hidden'); aiLoader.classList.remove('hidden'); aiResult.classList.add('hidden');
+                setTimeout(() => { aiLoader.classList.add('hidden'); aiResult.classList.remove('hidden'); }, 2500);
             });
         }
 
@@ -925,42 +869,26 @@
             if (!mobileMenu) return;
             const isOpen = mobileMenu.classList.contains('opacity-100');
             if (isOpen) {
-                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-                document.body.style.overflow = '';
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto'); mobileMenu.classList.add('opacity-0', 'pointer-events-none'); document.body.classList.remove('modal-open');
             } else {
-                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-                mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden';
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none'); mobileMenu.classList.add('opacity-100', 'pointer-events-auto'); document.body.classList.add('modal-open');
             }
         }
 
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', toggleMenu);
-        }
-        if (closeMenuBtn) {
-            closeMenuBtn.addEventListener('click', toggleMenu);
-        }
-        mobileLinks.forEach(link => {
-            if (link) link.addEventListener('click', toggleMenu);
-        });
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => { if (link) link.addEventListener('click', toggleMenu); });
 
         const leadForm = document.getElementById('lead-form');
         if (leadForm) {
             leadForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const nomeElem = document.getElementById('nome');
-                const assuntoElem = document.getElementById('assunto');
-                
-                const nome = nomeElem ? nomeElem.value : '';
-                const assunto = assuntoElem ? assuntoElem.value : '';
-                
+                const nomeElem = document.getElementById('nome'); const assuntoElem = document.getElementById('assunto');
+                const nome = nomeElem ? nomeElem.value : ''; const assunto = assuntoElem ? assuntoElem.value : '';
                 const mensagem = `Olá, o meu nome é *${nome}*. Gostaria de agendar um diagnóstico estratégico sigiloso.%0A%0A*Motivo Principal:* ${assunto}%0A%0AVim através do website.`;
-                
                 window.open(`https://wa.me/5544991492775?text=${mensagem}`, '_blank');
             });
         }
-
     </script>
 </body>
 </html>
