@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-PT" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JCPV Advocacia | A defesa técnica do seu patrimônio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JCPV Advocacia | A defesa técnica do seu património</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Atuação especializada na Lei do Superendividamento. Defesa contra abusos bancários, proteção de bens e repactuação de passivos. Sigilo absoluto.">
-    <meta name="keywords" content="advogado bancário, superendividamento, defesa do patrimônio, abusos bancários, JCPV advocacia, advogado maringá">
+    <meta name="keywords" content="advogado bancário, superendividamento, defesa do património, abusos bancários, JCPV advocacia, advogado maringá">
     <meta name="author" content="Dr. José Carlos Prestes Vieira">
     
-    <!-- Open Graph (Para partilhas no WhatsApp/Facebook) -->
-    <meta property="og:title" content="JCPV Advocacia | A defesa técnica do seu patrimônio">
+    <!-- Open Graph -->
+    <meta property="og:title" content="JCPV Advocacia | A defesa técnica do seu património">
     <meta property="og:description" content="Escritório especializado na defesa contra abusos bancários e reestruturação de passivos.">
     <meta property="og:type" content="website">
 
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+
     <!-- ======================================================= -->
-    <!-- ÁREA PARA O GESTOR DE TRÁFEGO (INSERIR PIXELS/TAGS AQUI) -->
+    <!-- RASTREAMENTO GOOGLE ANALYTICS (ATIVO)                   -->
     <!-- ======================================================= -->
-    
-    <!-- Google Tag Manager (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P392Q5B6Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-1P392Q5B6Q');
     </script>
-    
-    <!-- Meta Pixel Code - COLE AQUI O SCRIPT DO FACEBOOK -->
-
     <!-- ======================================================= -->
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -62,7 +57,6 @@
                     animation: {
                         'marquee': 'marquee 25s linear infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'pulse-fast': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'bounce-slight': 'bounce-slight 2s infinite ease-in-out',
                         'spin-slow': 'spin 3s linear infinite',
                     },
@@ -81,61 +75,42 @@
         }
     </script>
 
-    <!-- Custom CSS -->
     <style>
         body { background-color: #F9F8F6; color: #1A1918; overflow-x: hidden; }
-        
         .noise-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none; z-index: 9999; opacity: 0.04;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
-
         .glass-header {
             background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(163, 145, 113, 0.2);
         }
-
         .glass-card {
             background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.8);
             box-shadow: 0 8px 32px -8px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .glass-card:hover {
             border-color: rgba(163, 145, 113, 0.4); transform: translateY(-5px);
             box-shadow: 0 20px 40px -10px rgba(163, 145, 113, 0.15); background: rgba(255, 255, 255, 0.9);
         }
-
-        .ambient-glow { position: absolute; border-radius: 50%; filter: blur(120px); z-index: 0; pointer-events: none; }
         .stack-container { position: relative; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F9F8F6; }
         ::-webkit-scrollbar-thumb { background: #D1CCC4; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #A39171; }
-
-        .text-gradient {
-            background: linear-gradient(to right, #A39171, #7A6A4F);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: sweep .5s ease-in-out; }
         @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
-
         .typing-caret {
             display: inline-block; width: 2px; height: 1.2em; background-color: #A39171;
             vertical-align: middle; animation: blink 1s step-end infinite;
         }
         @keyframes blink { 50% { opacity: 0; } }
-
-        .logo-svg:hover { transform: scale(1.02); transition: transform 0.3s ease; }
-        .logo-svg { transition: transform 0.3s ease; }
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Modal Styles */
         .modal-open { overflow: hidden; }
     </style>
 </head>
@@ -146,7 +121,6 @@
     <!-- Header Flutuante -->
     <header class="fixed w-full top-0 z-50 pt-4 px-4 md:px-6 transition-all duration-300 pointer-events-none" id="header-wrapper">
         <div id="header-bg" class="absolute inset-0 mx-4 md:mx-6 mt-4 rounded-full transition-all duration-500 pointer-events-none opacity-0 border border-transparent"></div>
-        
         <div id="header-inner" class="relative max-w-7xl mx-auto h-24 px-6 lg:px-8 flex items-center justify-between rounded-full transition-all duration-500 pointer-events-auto">
             
             <a href="#" class="logo-svg block h-[75px] relative z-10 shrink-0 flex items-center text-brandBlue hover:text-accent transition-colors duration-300 py-1">
@@ -174,7 +148,7 @@
                 <a href="#especialista" class="hover:text-accent transition-colors">O Escritório</a>
             </nav>
 
-            <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-accent hover:bg-ink transition-colors rounded-full tracking-wide shadow-lg shadow-accent/20 hover:animate-none">
+            <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-accent hover:bg-ink transition-colors rounded-full tracking-wide shadow-lg shadow-accent/20">
                 Solicitar Análise
             </a>
             
@@ -233,7 +207,7 @@
             
             <h1 class="hero-el font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.05] drop-shadow-2xl">
                 A defesa técnica do <br>
-                <span class="italic text-accentLight">seu patrimônio.</span>
+                <span class="italic text-accentLight">seu património.</span>
             </h1>
             
             <p class="hero-el max-w-3xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-12 drop-shadow-md">
@@ -490,7 +464,9 @@
             <div class="flex gap-6 overflow-x-auto hide-scroll pb-8 snap-x snap-mandatory">
                 <div class="snap-center shrink-0 w-[85vw] md:w-[400px] glass-card rounded-2xl p-8 relative">
                     <svg class="w-10 h-10 text-accent/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <div class="flex gap-1 text-yellow-500 mb-6">★ ★ ★ ★ ★</div>
+                    <div class="flex gap-1 text-yellow-500 mb-6">
+                        ★ ★ ★ ★ ★
+                    </div>
                     <p class="text-muted text-lg italic leading-relaxed mb-6">"Eu já não dormia com as ligações do banco e a ameaça de perder o carro. Em semanas, o Dr. José Carlos conseguiu uma liminar que bloqueou os descontos absurdos no meu salário. Devolveu-me a vida."</p>
                     <div>
                         <p class="text-ink font-bold font-display">M. S. Fernandes</p>
@@ -500,7 +476,9 @@
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[400px] glass-card rounded-2xl p-8 relative">
                     <svg class="w-10 h-10 text-accent/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <div class="flex gap-1 text-yellow-500 mb-6">★ ★ ★ ★ ★</div>
+                    <div class="flex gap-1 text-yellow-500 mb-6">
+                        ★ ★ ★ ★ ★
+                    </div>
                     <p class="text-muted text-lg italic leading-relaxed mb-6">"Fui enganada num empréstimo abusivo que consumia 70% da minha pensão. A equipa da JCPV aplicou a Lei do Superendividamento e hoje pago uma parcela justa. Profissionalismo e sigilo total."</p>
                     <div>
                         <p class="text-ink font-bold font-display">A. C. Ribeiro</p>
@@ -510,7 +488,9 @@
 
                 <div class="snap-center shrink-0 w-[85vw] md:w-[400px] glass-card rounded-2xl p-8 relative">
                     <svg class="w-10 h-10 text-accent/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <div class="flex gap-1 text-yellow-500 mb-6">★ ★ ★ ★ ★</div>
+                    <div class="flex gap-1 text-yellow-500 mb-6">
+                        ★ ★ ★ ★ ★
+                    </div>
                     <p class="text-muted text-lg italic leading-relaxed mb-6">"O nível técnico impressiona. Fizeram um pente-fino nos meus contratos empresariais e encontraram taxas ilegais que o banco cobrava há anos. Ganhamos a causa e limpamos o meu nome."</p>
                     <div>
                         <p class="text-ink font-bold font-display">L. M. Costa</p>
@@ -527,7 +507,9 @@
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <div class="reveal flex-1 relative order-2 lg:order-1">
                     <div class="relative h-[650px] w-full rounded-sm overflow-hidden bg-cream p-4 border border-ink/5">
+                        
                         <img src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover object-top rounded shadow-inner" style="filter: contrast(1.05) brightness(0.95);">
+                        
                         <div class="absolute bottom-10 left-10 right-10 bg-white/90 backdrop-blur-md p-6 border-l-4 border-l-accent shadow-xl">
                             <p class="font-display text-lg text-ink font-bold mb-1">Dr. José Carlos Prestes Vieira</p>
                             <p class="text-sm text-accent tracking-widest uppercase">OAB/PR 118.596 • Maringá/PR</p>
@@ -540,9 +522,14 @@
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-ink mb-8 leading-tight">
                         "A advocacia tradicional pergunta quanto você deve. <span class="italic text-muted">Nós perguntamos como proteger o seu futuro.</span>"
                     </h2>
+                    
                     <div class="space-y-6 text-muted font-light text-lg">
-                        <p>Acreditamos que o superendividamento não é uma falha moral, mas um fenômeno estrutural gerado pela assimetria do sistema financeiro.</p>
-                        <p>Aqui, o seu caso é tratado com a combatividade que a sua paz financeira exige, aplicando as ferramentas precisas da Lei 14.181/2021 para barrar abusos de instituições financeiras.</p>
+                        <p>
+                            Acreditamos que o superendividamento não é uma falha moral, mas um fenômeno estrutural gerado pela assimetria do sistema financeiro.
+                        </p>
+                        <p>
+                            Aqui, o seu caso é tratado com a combatividade que a sua paz financeira exige, aplicando as ferramentas precisas da Lei 14.181/2021 para barrar abusos de instituições financeiras.
+                        </p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-8 mt-12 border-t border-ink/10 pt-8">
@@ -582,7 +569,9 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                         </span>
                     </summary>
-                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">A regra protege o bem de família, mas há exceções perigosas. Uma auditoria é o único caminho para garantir a blindagem.</div>
+                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">
+                        A regra protege o bem de família, mas há exceções perigosas. Uma auditoria é o único caminho para garantir a blindagem.
+                    </div>
                 </details>
                 <details class="glass-card rounded-md group cursor-pointer">
                     <summary class="font-display font-semibold text-lg text-ink p-6 flex justify-between items-center outline-none">
@@ -591,7 +580,9 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                         </span>
                     </summary>
-                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">Não. A retenção abusiva é condenada. Atuamos com pedidos liminares enérgicos para limitar descontos.</div>
+                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">
+                        Não. A retenção abusiva é condenada. Atuamos com pedidos liminares enérgicos para limitar descontos.
+                    </div>
                 </details>
                 <details class="glass-card rounded-md group cursor-pointer">
                     <summary class="font-display font-semibold text-lg text-ink p-6 flex justify-between items-center outline-none">
@@ -600,7 +591,20 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                         </span>
                     </summary>
-                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">Sim, a suspensão das cobranças e a retirada do seu nome do SPC/Serasa é um dos primeiros efeitos práticos buscados.</div>
+                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">
+                        Sim, a suspensão das cobranças e a retirada do seu nome do SPC/Serasa é um dos primeiros efeitos práticos buscados.
+                    </div>
+                </details>
+                <details class="glass-card rounded-md group cursor-pointer">
+                    <summary class="font-display font-semibold text-lg text-ink p-6 flex justify-between items-center outline-none">
+                        Quanto custa a defesa?
+                        <span class="text-accent group-open:rotate-45 transition-transform duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted font-light border-t border-ink/5 pt-4">
+                        O primeiro passo é uma Análise de Viabilidade. Os honorários são definidos com clareza apenas se houver viabilidade jurídica real.
+                    </div>
                 </details>
             </div>
         </div>
@@ -608,20 +612,37 @@
 
     <!-- Contato -->
     <section id="contato" class="py-32 relative overflow-hidden bg-ink">
-        <div class="absolute inset-0 z-0"><div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,145,113,0.15)_0%,transparent_60%)]"></div></div>
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,145,113,0.15)_0%,transparent_60%)]"></div>
+        </div>
+        
         <div class="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="reveal text-center lg:text-left">
                 <div class="text-accent text-sm font-bold tracking-widest uppercase mb-4">Contato Oficial</div>
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-cream mb-6">Pronto para dar o <span class="text-accent italic">primeiro passo?</span></h2>
-                <p class="text-cream/70 text-lg mb-10 max-w-lg mx-auto lg:mx-0">O tempo joga a favor dos juros. Fale com o Dr. José Carlos Prestes e agende o seu diagnóstico estratégico hoje mesmo.</p>
+                <p class="text-cream/70 text-lg mb-10 max-w-lg mx-auto lg:mx-0">
+                    O tempo joga a favor dos juros. Fale com o Dr. José Carlos Prestes e agende o seu diagnóstico estratégico hoje mesmo.
+                </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                     <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" class="whatsapp-track w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#20bd5a] hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.2)]">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         Fale pelo WhatsApp
                     </a>
                 </div>
+                
+                <div class="mt-8 flex flex-col gap-2 text-cream/60 text-sm">
+                    <div class="flex items-center gap-2 justify-center lg:justify-start">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        (44) 99149-2775
+                    </div>
+                    <div class="flex items-center gap-2 justify-center lg:justify-start">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        advcarlos.prestes@gmail.com
+                    </div>
+                </div>
             </div>
 
+            <!-- Formulário -->
             <div class="reveal bg-white/5 p-8 md:p-10 rounded-xl shadow-2xl relative border border-white/10 backdrop-blur-xl">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accentLight rounded-t-xl"></div>
                 <h3 class="font-display text-2xl text-white font-bold mb-6">Solicite um Contato Sigiloso</h3>
@@ -630,6 +651,7 @@
                         <label class="block text-sm font-medium text-gray-300 mb-1" for="nome">Nome Completo</label>
                         <input type="text" id="nome" class="w-full bg-black/40 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors" placeholder="Seu nome" required>
                     </div>
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-1" for="whatsapp">WhatsApp</label>
@@ -645,80 +667,242 @@
                             </select>
                         </div>
                     </div>
+
                     <button type="submit" class="whatsapp-track w-full bg-accent hover:bg-accentLight text-white font-medium py-4 rounded transition-colors duration-300 relative overflow-hidden group">
                         <span class="relative z-10">Enviar Solicitação Urgente</span>
                         <div class="absolute inset-0 h-full w-full bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                     </button>
+                    
                     <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-center gap-3 text-gray-400 text-xs">
                         <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         <span>Proteção Absoluta de Dados e Sigilo Profissional (Art. 36, CED OAB)</span>
                     </div>
                 </form>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-black border-t border-white/10 py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-right">
-            <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-white opacity-80">
-                <g fill="currentColor">
-                    <rect x="66" y="15" width="4" height="85" />
-                    <line x1="15" y1="75" x2="125" y2="75" stroke="currentColor" stroke-width="2" />
-                </g>
-                <text x="70" y="125" font-family="'Playfair Display', serif" font-size="16" font-weight="700" fill="currentColor" text-anchor="middle">JCPV</text>
-            </svg>
-            <div class="text-gray-500 text-sm font-light">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+            
+            <div class="h-16 opacity-80 hover:opacity-100 transition-all flex items-center text-white">
+                <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto">
+                    <g fill="currentColor">
+                        <rect x="66" y="15" width="4" height="85" />
+                        <path d="M 70 15 H 95 V 45 H 70" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" />
+                        <path d="M 66 55 H 41 V 90 H 66" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" />
+                        <line x1="15" y1="75" x2="125" y2="75" stroke="currentColor" stroke-width="2" />
+                        <path d="M 15 75 L 5 100 H 25 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <ellipse cx="15" cy="100" rx="10" ry="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M 125 75 L 115 100 H 135 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <ellipse cx="125" cy="100" rx="10" ry="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    </g>
+                    <text x="70" y="125" font-family="'Playfair Display', serif" font-size="16" font-weight="700" fill="currentColor" text-anchor="middle" letter-spacing="0.05em">JCPV</text>
+                    <text x="70" y="138" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="currentColor" text-anchor="middle" letter-spacing="0.2em" opacity="0.8">ADVOCACIA</text>
+                </svg>
+            </div>
+
+            <div class="text-gray-500 text-sm font-light text-center md:text-right flex flex-col md:items-end gap-2">
                 <p>&copy; 2026 JCPV Advocacia. Dr. José Carlos Prestes Vieira.</p>
                 <p class="text-xs">OAB/PR 118.596 | Sede: Maringá/PR - Atuação Nacional.</p>
+                
+                <!-- Links Legais Obrigatórios para Google/Facebook Ads -->
+                <div class="mt-4 flex flex-wrap justify-center md:justify-end gap-4 text-xs text-gray-600">
+                    <button onclick="toggleModal('privacyModal')" class="hover:text-accent transition-colors">Política de Privacidade</button>
+                    <span>•</span>
+                    <button onclick="toggleModal('termsModal')" class="hover:text-accent transition-colors">Termos de Uso</button>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- FAB Enriquecido (WhatsApp) -->
+    <div class="fixed bottom-6 right-6 z-[900] flex items-center group">
+        <div class="hidden md:block mr-4 bg-white text-ink text-sm font-bold px-4 py-2 rounded-full shadow-lg opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 border border-ink/5 pointer-events-none">
+            Fale com o Advogado Agora
+        </div>
+        
+        <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" rel="noopener noreferrer" class="whatsapp-track relative bg-[#25D366] text-white p-4 rounded-full hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.3)] flex items-center justify-center animate-bounce-slight">
+            <span class="absolute top-0 right-0 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-200 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-100 border border-green-500"></span>
+            </span>
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <!-- Modais Legais (Privacidade e Termos) -->
+    <div id="privacyModal" class="fixed inset-0 z-[2000] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative">
+            <button onclick="toggleModal('privacyModal')" class="absolute top-4 right-4 text-gray-500 hover:text-ink"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 class="font-display text-2xl font-bold text-ink mb-4">Política de Privacidade</h3>
+            <div class="text-sm text-muted space-y-4">
+                <p>A JCPV Advocacia respeita a sua privacidade. Esta política demonstra o nosso compromisso com a proteção de dados (LGPD).</p>
+                <p><strong>1. Recolha de Dados:</strong> Recolhemos apenas as informações fornecidas voluntariamente por si (nome, telefone, caso jurídico) através dos botões de WhatsApp e formulários do nosso site.</p>
+                <p><strong>2. Uso das Informações:</strong> As suas informações são utilizadas exclusivamente para o contactar de volta e avaliar a viabilidade jurídica do seu caso. Garantimos absoluto sigilo profissional, nos termos do Código de Ética da OAB.</p>
+                <p><strong>3. Partilha:</strong> Não vendemos, alugamos ou partilhamos as suas informações com terceiros sob nenhuma circunstância.</p>
+                <p><strong>4. Segurança:</strong> Adotamos medidas de segurança rígidas para proteger os seus dados contra acessos não autorizados.</p>
+            </div>
+            <button onclick="toggleModal('privacyModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full font-bold">Compreendido</button>
+        </div>
+    </div>
+
+    <div id="termsModal" class="fixed inset-0 z-[2000] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative">
+            <button onclick="toggleModal('termsModal')" class="absolute top-4 right-4 text-gray-500 hover:text-ink"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 class="font-display text-2xl font-bold text-ink mb-4">Termos de Uso</h3>
+            <div class="text-sm text-muted space-y-4">
+                <p>Ao aceder ao site da JCPV Advocacia, concorda em cumprir estes termos de serviço.</p>
+                <p><strong>1. Uso de Informações:</strong> O conteúdo deste site é puramente informativo e não substitui uma consulta jurídica formal. A leitura deste material não estabelece uma relação cliente-advogado.</p>
+                <p><strong>2. O Analisador de Viabilidade:</strong> A ferramenta de "Diagnóstico Prévio" (IA) presente no site serve apenas como simulação baseada em padrões de mercado. O resultado não é uma promessa de causa ganha nem um parecer legal vinculativo.</p>
+                <p><strong>3. Propriedade Intelectual:</strong> Todo o conteúdo, logotipos e textos deste site são propriedade da JCPV Advocacia. É proibida a reprodução sem autorização.</p>
+            </div>
+            <button onclick="toggleModal('termsModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full font-bold">Aceitar e Fechar</button>
+        </div>
+    </div>
+
+    <!-- Banner de Cookies (LGPD) -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-ink border-t border-accent/20 z-[1000] p-4 px-6 flex flex-col sm:flex-row justify-between items-center gap-4 transform translate-y-full transition-transform duration-500">
+        <p class="text-white/80 text-xs sm:text-sm font-light text-center sm:text-left">
+            Utilizamos cookies para melhorar a sua experiência, personalizar anúncios e analisar o nosso tráfego. Ao continuar a navegar, concorda com a nossa <button onclick="toggleModal('privacyModal')" class="text-accent underline hover:text-accentLight">Política de Privacidade</button>.
+        </p>
+        <button id="accept-cookies" class="whitespace-nowrap px-6 py-2.5 bg-accent text-white text-sm font-bold rounded-sm hover:bg-white hover:text-ink transition-all">
+            Aceitar e Fechar
+        </button>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <script>
+        // Restauração de Scroll Manual
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        window.onload = function() { window.scrollTo(0, 0); };
+
+        // Funções Modais
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            if(modal) {
+                modal.classList.toggle('hidden');
+                document.body.classList.toggle('modal-open');
+            }
+        }
+
+        // Lógica do Banner de Cookies (LGPD)
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+        if (!localStorage.getItem('cookiesAccepted')) {
+            // Mostra o banner após 1.5 segundos
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+            }, 1500);
+        }
+
+        if (acceptCookiesBtn) {
+            acceptCookiesBtn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.classList.add('translate-y-full');
+            });
+        }
+
+        // Configuração GSAP (Animações)
         gsap.registerPlugin(ScrollTrigger);
+
+        const headerBg = document.getElementById('header-bg');
         window.addEventListener('scroll', () => {
-            const bg = document.getElementById('header-bg');
-            if (window.scrollY > 50) bg.classList.add('glass-header', 'opacity-100');
-            else bg.classList.remove('glass-header', 'opacity-100');
+            if (!headerBg) return;
+            if (window.scrollY > 50) {
+                headerBg.classList.add('glass-header', 'shadow-[0_8px_30px_rgba(0,0,0,0.06)]', 'opacity-100');
+                headerBg.classList.remove('opacity-0', 'border-transparent');
+            } else {
+                headerBg.classList.remove('glass-header', 'shadow-[0_8px_30px_rgba(0,0,0,0.06)]', 'opacity-100');
+                headerBg.classList.add('opacity-0', 'border-transparent');
+            }
         });
+
         gsap.from(".hero-el", { y: 40, opacity: 0, duration: 1.2, stagger: 0.15, ease: "power3.out", delay: 0.2 });
-        gsap.utils.toArray('.reveal').forEach(s => {
-            gsap.from(s, { scrollTrigger: { trigger: s, start: "top 85%" }, y: 50, opacity: 0, duration: 1, ease: "power2.out" });
+
+        gsap.utils.toArray('.reveal').forEach(section => {
+            gsap.from(section, { scrollTrigger: { trigger: section, start: "top 85%", toggleActions: "play none none reverse" }, y: 50, opacity: 0, duration: 1, ease: "power2.out" });
         });
-        
-        // Counter Animation
+
+        // Contadores Animados (+15M, etc)
         const counters = document.querySelectorAll('.counter');
-        counters.forEach(c => {
-            const target = +c.getAttribute('data-target');
+        if (counters.length > 0) {
             ScrollTrigger.create({
-                trigger: c, start: 'top 90%', once: true,
+                trigger: '.counter', start: 'top 90%', once: true,
                 onEnter: () => {
-                    let curr = 0; const inc = target / 100;
-                    const upd = () => {
-                        curr += inc; if(curr < target) { c.innerText = Math.ceil(curr); requestAnimationFrame(upd); }
-                        else { c.innerText = target; }
-                    }; upd();
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const increment = target / (2000 / 16); 
+                        let current = 0;
+                        const updateCounter = () => {
+                            current += increment;
+                            if(current < target) { counter.innerText = Math.ceil(current); requestAnimationFrame(updateCounter); } 
+                            else { counter.innerText = target; }
+                        };
+                        updateCounter();
+                    });
                 }
+            });
+        }
+
+        // Accordion FAQ (Apenas um aberto de cada vez)
+        const detailsElements = document.querySelectorAll('details');
+        detailsElements.forEach((targetDetail) => {
+            targetDetail.addEventListener('click', () => {
+                detailsElements.forEach((detail) => { if (detail !== targetDetail) { detail.removeAttribute('open'); } });
             });
         });
 
-        // Sandbox IA Logic
+        // Lógica do Sandbox IA
         const aiBtn = document.getElementById('ai-btn');
         const aiInput = document.getElementById('ai-input');
         const aiOutput = document.getElementById('ai-output');
         const aiLoader = document.getElementById('ai-loader');
         const aiResult = document.getElementById('ai-result');
 
-        if (aiBtn) {
+        if (aiBtn && aiInput && aiOutput && aiLoader && aiResult) {
             aiBtn.addEventListener('click', () => {
                 if(aiInput.value.trim() === '') { aiInput.focus(); return; }
                 aiBtn.style.display = 'none'; aiInput.disabled = true; aiInput.classList.add('opacity-50');
-                aiOutput.classList.remove('hidden');
+                aiOutput.classList.remove('hidden'); aiLoader.classList.remove('hidden'); aiResult.classList.add('hidden');
                 setTimeout(() => { aiLoader.classList.add('hidden'); aiResult.classList.remove('hidden'); }, 2500);
+            });
+        }
+
+        // Lógica do Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            if (!mobileMenu) return;
+            const isOpen = mobileMenu.classList.contains('opacity-100');
+            if (isOpen) {
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto'); mobileMenu.classList.add('opacity-0', 'pointer-events-none'); document.body.classList.remove('modal-open');
+            } else {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none'); mobileMenu.classList.add('opacity-100', 'pointer-events-auto'); document.body.classList.add('modal-open');
+            }
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => { if (link) link.addEventListener('click', toggleMenu); });
+
+        // Lógica do Formulário de Contacto
+        const leadForm = document.getElementById('lead-form');
+        if (leadForm) {
+            leadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nomeElem = document.getElementById('nome'); const assuntoElem = document.getElementById('assunto');
+                const nome = nomeElem ? nomeElem.value : ''; const assunto = assuntoElem ? assuntoElem.value : '';
+                const mensagem = `Olá, o meu nome é *${nome}*. Gostaria de agendar um diagnóstico estratégico sigiloso.%0A%0A*Motivo Principal:* ${assunto}%0A%0AVim através do website.`;
+                window.open(`https://wa.me/5544991492775?text=${mensagem}`, '_blank');
             });
         }
     </script>
