@@ -60,6 +60,12 @@
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-item.active .faq-answer { max-height: 200px; }
         .faq-item.active .faq-icon { transform: rotate(45deg); }
+        
+        /* Estilos do Chatbot */
+        #ai-chat-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .chat-bubble { max-width: 85%; padding: 12px 16px; border-radius: 16px; font-size: 14px; line-height: 1.5; margin-bottom: 8px; }
+        .bubble-ai { background: #F3F4F6; color: #1A1918; align-self: flex-start; border-bottom-left-radius: 4px; }
+        .bubble-user { background: #A39171; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
     </style>
 </head>
 <body class="antialiased font-sans selection:bg-accent selection:text-white relative">
@@ -72,7 +78,6 @@
         <div id="header-inner" class="relative max-w-7xl mx-auto h-20 px-6 flex items-center justify-between rounded-full transition-all duration-500 pointer-events-auto">
             
             <a href="#" class="flex items-center gap-3 transition-transform hover:scale-105">
-                <!-- Logotipo Oficial SVG -->
                 <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-auto text-ink">
                     <g fill="currentColor">
                         <rect x="66" y="15" width="4" height="85" />
@@ -108,7 +113,6 @@
     <!-- Seção Hero Principal -->
     <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-ink">
         <div class="absolute inset-0 z-0">
-            <!--  -->
             <img src="https://images.unsplash.com/photo-1505664177922-90226dd18c5e?auto=format&fit=crop&q=80&w=2000" alt="Defesa Patrimonial Premium" class="w-full h-full object-cover opacity-20">
             <div class="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/80 to-ink"></div>
         </div>
@@ -129,37 +133,40 @@
             </p>
             
             <div class="hero-el flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href="https://wa.me/5544991492775" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-accent text-white font-bold text-lg rounded-sm hover:bg-white hover:text-ink transition-all duration-300 shadow-2xl">
-                    Agendar Diagnóstico Sigiloso
+                <button onclick="openChat()" class="w-full sm:w-auto px-10 py-5 bg-accent text-white font-bold text-lg rounded-sm hover:bg-white hover:text-ink transition-all duration-300 shadow-2xl">
+                    Iniciar Triagem com IA
+                </button>
+                <a href="https://wa.me/5544991492775" target="_blank" class="w-full sm:w-auto px-10 py-5 border border-white/20 text-white font-bold text-lg rounded-sm hover:bg-white/10 transition-all duration-300">
+                    Falar no WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Métricas (Autoridade) -->
+    <!-- Seção de Métricas -->
     <section class="py-16 bg-white relative z-20 border-y border-ink/5">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-ink/10">
             <div class="pt-8 md:pt-0">
                 <p class="text-5xl font-display font-bold text-ink">+R$ <span class="counter" data-target="15">0</span>M</p>
-                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2">Dívidas Analisadas</p>
+                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2 text-accent">Dívidas Analisadas</p>
             </div>
             <div class="pt-8 md:pt-0">
                 <p class="text-5xl font-display font-bold text-ink">+<span class="counter" data-target="300">0</span></p>
-                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2">Famílias Protegidas</p>
+                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2 text-accent">Famílias Protegidas</p>
             </div>
             <div class="pt-8 md:pt-0">
                 <p class="text-5xl font-display font-bold text-ink">100%</p>
-                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2">Sigilo Profissional</p>
+                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2 text-accent">Sigilo Profissional</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Contexto (O Cenário de Dor) -->
+    <!-- Seção de Cenário (Dor) -->
     <section id="dor" class="py-32 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-16 items-start">
                 <div class="reveal flex-1">
-                    <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-6 text-accent">O Cenário Atual</p>
+                    <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-6">O Cenário Atual</p>
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-ink mb-10 leading-tight">
                         Você sente que está trabalhando <br>
                         <span class="italic text-muted font-normal">apenas para pagar juros?</span>
@@ -197,47 +204,32 @@
         </div>
     </section>
 
-    <!-- Seção de Áreas de Defesa -->
+    <!-- Áreas de Atendimento -->
     <section id="servicos" class="py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-4">Especialidades</p>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-ink">Soluções para o seu Patrimônio</h2>
+        <div class="max-w-7xl mx-auto px-6 text-center mb-20">
+            <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-4">Especialidades</p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-ink">Estratégias de Defesa do Patrimônio</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 rounded-2xl border border-accent/10">
+                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">⚖️</div>
+                <h3 class="font-display text-2xl font-bold mb-4 text-ink">Lei do Superendividamento</h3>
+                <p class="text-muted text-sm leading-relaxed mb-6">Repactuação de dívidas sob a égide da Lei 14.181/2021. Criamos um plano de pagamento que respeita o seu sustento.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 rounded-2xl border border-accent/10">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">⚖️</div>
-                    <h3 class="font-display text-2xl font-bold mb-4 text-ink">Lei do Superendividamento</h3>
-                    <p class="text-muted text-sm leading-relaxed mb-6">Repactuação de dívidas sob a égide da Lei 14.181/2021. Criamos um plano de pagamento que respeita o seu sustento.</p>
-                    <ul class="text-xs text-accent font-bold space-y-2 uppercase tracking-wider">
-                        <li>• Plano Judicial de Pagamento</li>
-                        <li>• Audiência de Conciliação</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-10 rounded-2xl border border-accent/10">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">🏛️</div>
-                    <h3 class="font-display text-2xl font-bold mb-4 text-ink">Abusos Bancários</h3>
-                    <p class="text-muted text-sm leading-relaxed mb-6">Revisão técnica e pericial de contratos para identificação de anatocismo, taxas ilegais e vendas casadas.</p>
-                    <ul class="text-xs text-accent font-bold space-y-2 uppercase tracking-wider">
-                        <li>• Juros Capitalizados</li>
-                        <li>• Tarifas Inexistentes</li>
-                    </ul>
-                </div>
-                <div class="glass-card p-10 rounded-2xl border border-accent/10">
-                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">🛡️</div>
-                    <h3 class="font-display text-2xl font-bold mb-4 text-ink">Blindagem de Bens</h3>
-                    <p class="text-muted text-sm leading-relaxed mb-6">Proteção jurídica estratégica contra penhoras e execuções judiciais de imóveis, veículos e salários.</p>
-                    <ul class="text-xs text-accent font-bold space-y-2 uppercase tracking-wider">
-                        <li>• Embargos à Execução</li>
-                        <li>• Defesa do Bem de Família</li>
-                    </ul>
-                </div>
+            <div class="glass-card p-10 rounded-2xl border border-accent/10">
+                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">🏛️</div>
+                <h3 class="font-display text-2xl font-bold mb-4 text-ink">Abusos Bancários</h3>
+                <p class="text-muted text-sm leading-relaxed mb-6">Revisão técnica e pericial de contratos para identificação de anatocismo, taxas ilegais e vendas casadas.</p>
+            </div>
+            <div class="glass-card p-10 rounded-2xl border border-accent/10">
+                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">🛡️</div>
+                <h3 class="font-display text-2xl font-bold mb-4 text-ink">Blindagem de Bens</h3>
+                <p class="text-muted text-sm leading-relaxed mb-6">Proteção jurídica estratégica contra penhoras e execuções judiciais de imóveis, veículos e salários.</p>
             </div>
         </div>
     </section>
 
-    <!-- Manifesto e Estratégia -->
+    <!-- Manifesto e Método -->
     <section id="metodo" class="py-32 bg-ink text-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-20">
@@ -247,21 +239,15 @@
                     <p class="text-gray-400 text-lg font-light leading-relaxed mb-12">Não somos apenas um escritório; somos uma barreira jurídica contra a ganância do sistema financeiro. Analisamos a legalidade de cada cláusula com precisão cirúrgica.</p>
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
-                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
-                            </div>
+                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1"><div class="w-2 h-2 bg-accent rounded-full"></div></div>
                             <p class="text-gray-300 font-medium">Diagnóstico preliminar de viabilidade técnica.</p>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
-                            </div>
+                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1"><div class="w-2 h-2 bg-accent rounded-full"></div></div>
                             <p class="text-gray-300 font-medium">Cálculos periciais para identificação de anatocismo.</p>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
-                            </div>
+                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1"><div class="w-2 h-2 bg-accent rounded-full"></div></div>
                             <p class="text-gray-300 font-medium">Atendimento personalizado com suporte direto do especialista.</p>
                         </div>
                     </div>
@@ -281,13 +267,12 @@
         </div>
     </section>
 
-    <!-- O Especialista (Perfil Completo) -->
+    <!-- Perfil do Especialista -->
     <section id="especialista" class="py-32 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-20 items-center">
                 <div class="reveal flex-1 relative order-2 lg:order-1">
                     <div class="relative h-[650px] w-full rounded-sm overflow-hidden bg-cream p-3 shadow-2xl">
-                        <!-- Foto Principal -->
                         <img src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover object-top rounded shadow-inner" style="filter: contrast(1.05) brightness(0.95);">
                         <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 border-l-4 border-accent shadow-xl">
                             <p class="font-display text-xl text-ink font-bold mb-1">Dr. José Carlos Prestes Vieira</p>
@@ -314,156 +299,139 @@
                             <p class="text-sm text-muted">Cada caso é tratado com o máximo rigor de confidencialidade.</p>
                         </div>
                     </div>
-                    <div class="mt-12">
-                         <a href="https://wa.me/5544991492775" target="_blank" class="inline-flex items-center gap-4 px-8 py-4 bg-ink text-white font-bold rounded-sm hover:bg-accent transition-all duration-300 group">
-                            <span>Falar agora com o Dr. José Carlos</span>
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ (Dúvidas Frequentes) -->
+    <!-- FAQ -->
     <section class="py-32 bg-cream">
         <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-4xl font-bold text-ink">Perguntas Frequentes</h2>
-            </div>
-            
+            <h2 class="font-display text-4xl font-bold text-ink text-center mb-16 text-ink">Perguntas Frequentes</h2>
             <div class="space-y-4">
-                <div class="faq-item group bg-white p-6 rounded-xl border border-ink/5 cursor-pointer transition-all hover:border-accent/30" onclick="this.classList.toggle('active')">
-                    <div class="flex items-center justify-between">
-                        <p class="font-bold text-ink pr-4">O que é a Lei do Superendividamento?</p>
-                        <span class="faq-icon text-accent transition-transform text-2xl font-light">+</span>
-                    </div>
-                    <div class="faq-answer text-muted text-sm mt-4 leading-relaxed">
-                        É uma lei que protege o consumidor que não consegue pagar suas dívidas sem comprometer o sustento básico (mínimo existencial). Ela permite a repactuação coletiva das dívidas perante o judiciário.
-                    </div>
+                <div class="faq-item group bg-white p-6 rounded-xl border border-ink/5 cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between"><p class="font-bold text-ink pr-4">O que é a Lei do Superendividamento?</p><span class="faq-icon text-accent transition-transform text-2xl">+</span></div>
+                    <div class="faq-answer text-muted text-sm mt-4">É uma lei que protege o consumidor que não consegue pagar suas dívidas sem comprometer o sustento básico (mínimo existencial).</div>
                 </div>
-                
-                <div class="faq-item group bg-white p-6 rounded-xl border border-ink/5 cursor-pointer transition-all hover:border-accent/30" onclick="this.classList.toggle('active')">
-                    <div class="flex items-center justify-between">
-                        <p class="font-bold text-ink pr-4">O escritório atende fora de Maringá?</p>
-                        <span class="faq-icon text-accent transition-transform text-2xl font-light">+</span>
-                    </div>
-                    <div class="faq-answer text-muted text-sm mt-4 leading-relaxed">
-                        Sim. Através do processo digitalizado (e-Proc/PJe), realizamos defesas estratégicas em todo o território nacional com a mesma eficácia.
-                    </div>
-                </div>
-
-                <div class="faq-item group bg-white p-6 rounded-xl border border-ink/5 cursor-pointer transition-all hover:border-accent/30" onclick="this.classList.toggle('active')">
-                    <div class="flex items-center justify-between">
-                        <p class="font-bold text-ink pr-4">Quanto custa uma análise inicial?</p>
-                        <span class="faq-icon text-accent transition-transform text-2xl font-light">+</span>
-                    </div>
-                    <div class="faq-answer text-muted text-sm mt-4 leading-relaxed">
-                        Realizamos uma análise preliminar gratuita para verificar a viabilidade técnica do caso. Entre em contato para agendar o seu diagnóstico.
-                    </div>
+                <div class="faq-item group bg-white p-6 rounded-xl border border-ink/5 cursor-pointer" onclick="this.classList.toggle('active')">
+                    <div class="flex items-center justify-between"><p class="font-bold text-ink pr-4">O escritório atende fora de Maringá?</p><span class="faq-icon text-accent transition-transform text-2xl">+</span></div>
+                    <div class="faq-answer text-muted text-sm mt-4">Sim. Realizamos defesas estratégicas em todo o território nacional através do processo digital.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé Completo e Profissional -->
-    <footer class="bg-ink py-20 px-6 border-t border-white/5">
+    <!-- Rodapé -->
+    <footer class="bg-ink py-20 px-6 border-t border-white/5 text-center">
         <div class="max-w-7xl mx-auto flex flex-col items-center">
-            <!-- Logo Footer -->
             <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-20 w-auto text-white/20 mb-8">
                 <g fill="currentColor">
                     <rect x="66" y="15" width="4" height="85" />
-                    <path d="M 70 15 H 95 V 45 H 70" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" />
-                    <path d="M 66 55 H 41 V 90 H 66" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" />
                     <line x1="15" y1="75" x2="125" y2="75" stroke="currentColor" stroke-width="2" />
-                    <path d="M 15 75 L 5 100 H 25 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <ellipse cx="15" cy="100" rx="10" ry="3" fill="none" stroke="currentColor" stroke-width="1.5" />
-                    <path d="M 125 75 L 115 100 H 135 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <ellipse cx="125" cy="100" rx="10" ry="3" fill="none" stroke="currentColor" stroke-width="1.5" />
                 </g>
             </svg>
-            
-            <p class="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-6 text-center">
-                Dr. José Carlos Prestes Vieira • OAB/PR 118.596
-            </p>
-            <div class="w-16 h-[1px] bg-accent/30 mb-8"></div>
-            
-            <div class="flex flex-col md:flex-row gap-8 text-[10px] uppercase tracking-widest text-white/20 text-center mb-10">
-                <span>Maringá - Paraná</span>
-                <span class="hidden md:inline">•</span>
-                <span>Direito Bancário Estratégico</span>
-                <span class="hidden md:inline">•</span>
-                <span>Atendimento Nacional</span>
-            </div>
-
-            <p class="text-white/10 text-[9px] max-w-sm mx-auto leading-relaxed text-center italic uppercase">
-                Este site possui caráter exclusivamente informativo conforme os limites estabelecidos pelo Código de Ética e Disciplina da OAB.
-            </p>
+            <p class="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-6">Dr. José Carlos Prestes Vieira • OAB/PR 118.596</p>
+            <p class="text-white/10 text-[9px] max-w-sm mx-auto uppercase tracking-wider italic">Este site possui caráter exclusivamente informativo conforme normas da OAB.</p>
         </div>
     </footer>
 
-    <!-- Scripts de Animação (GSAP) -->
+    <!-- Chatbot Modal -->
+    <div id="ai-chat-modal" class="fixed inset-0 z-[100] bg-ink/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 invisible">
+        <div class="bg-white w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl flex flex-col h-[600px]">
+            <div class="bg-accent p-6 flex justify-between items-center text-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">⚖️</div>
+                    <div><p class="font-bold">Analista JCPV (IA)</p><p class="text-xs text-white/80">Triagem Inicial Sigilosa</p></div>
+                </div>
+                <button onclick="closeChat()" class="text-white/80 hover:text-white text-2xl">&times;</button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-6 overflow-y-auto flex flex-col gap-2">
+                <div class="chat-bubble bubble-ai">Olá, sou o assistente digital do Dr. José Carlos. Para uma análise precisa, poderia descrever brevemente a sua situação com o banco ou dívidas?</div>
+            </div>
+            <div class="p-4 border-t border-gray-100 flex gap-2">
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="flex-1 bg-gray-50 border-none rounded-full px-5 py-3 text-sm focus:ring-2 focus:ring-accent outline-none">
+                <button onclick="sendMessage()" class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-ink transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Funcionalidade -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
-        // Header Effect on Scroll
         window.addEventListener('scroll', () => {
-            const headerBg = document.getElementById('header-bg');
-            if (window.scrollY > 50) {
-                headerBg.classList.add('glass-header', 'opacity-100');
-            } else {
-                headerBg.classList.remove('glass-header', 'opacity-100');
-            }
+            const bg = document.getElementById('header-bg');
+            if (window.scrollY > 50) bg.classList.add('glass-header', 'opacity-100');
+            else bg.classList.remove('glass-header', 'opacity-100');
         });
-
-        // Hero Text Fade In
-        gsap.from(".hero-el", { 
-            y: 40, 
-            opacity: 0, 
-            duration: 1.2, 
-            stagger: 0.2, 
-            ease: "power3.out" 
-        });
-
-        // Generic Reveal Animation
+        gsap.from(".hero-el", { y: 40, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power3.out" });
         gsap.utils.toArray('.reveal').forEach(el => {
-            gsap.from(el, { 
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 85%"
-                },
-                y: 50, 
-                opacity: 0, 
-                duration: 1.2, 
-                ease: "power2.out" 
-            });
+            gsap.from(el, { scrollTrigger: { trigger: el, start: "top 85%" }, y: 50, opacity: 0, duration: 1.2, ease: "power2.out" });
+        });
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(c => {
+            const target = +c.getAttribute('data-target');
+            ScrollTrigger.create({ trigger: c, start: "top 90%", onEnter: () => {
+                let curr = 0; const update = () => {
+                    curr += target/100;
+                    if(curr < target) { c.innerText = Math.ceil(curr); setTimeout(update, 20); }
+                    else { c.innerText = target; }
+                }; update();
+            }});
         });
 
-        // Counter Animation Logic
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            ScrollTrigger.create({
-                trigger: counter,
-                start: "top 90%",
-                onEnter: () => {
-                    let current = 0;
-                    const increment = target / 100;
-                    const updateCounter = () => {
-                        current += increment;
-                        if(current < target) {
-                            counter.innerText = Math.ceil(current);
-                            setTimeout(updateCounter, 20);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-                    updateCounter();
-                }
-            });
-        });
+        // Lógica da IA (Gemini API)
+        const apiKey = ""; 
+        const chatModal = document.getElementById('ai-chat-modal');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+
+        function openChat() { 
+            chatModal.classList.remove('invisible');
+            chatModal.classList.add('opacity-100');
+        }
+        function closeChat() { 
+            chatModal.classList.add('invisible');
+            chatModal.classList.remove('opacity-100');
+        }
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if(!text) return;
+            appendMessage(text, 'user');
+            chatInput.value = '';
+
+            const systemPrompt = "Você é o assistente virtual do Dr. José Carlos Prestes Vieira (JCPV Advocacia), especialista em Direito Bancário e Superendividamento em Maringá/PR. Seu objetivo é fazer uma triagem técnica inicial e acolhedora. Seja formal, empático e técnico. Se identificar um caso de superendividamento ou abuso bancário, sugira que o usuário fale diretamente com o Dr. José Carlos pelo WhatsApp (botão no site).";
+            
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: text }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                });
+                const data = await response.json();
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Desculpe, tive um problema técnico. Por favor, entre em contato via WhatsApp.";
+                appendMessage(aiText, 'ai');
+            } catch (e) {
+                appendMessage("Erro na conexão. Recomendo o contato via WhatsApp para urgências.", 'ai');
+            }
+        }
+
+        function appendMessage(text, side) {
+            const div = document.createElement('div');
+            div.className = `chat-bubble bubble-${side}`;
+            div.innerText = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
     </script>
 </body>
 </html>
