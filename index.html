@@ -10,22 +10,20 @@
     <meta name="author" content="Dr. José Carlos Prestes Vieira">
     
     <!-- ======================================================= -->
-    <!-- RASTREAMENTO GOOGLE ANALYTICS (ID: G-1P392Q5B6Q)        -->
+    <!-- RASTREAMENTO GOOGLE ANALYTICS (MANTIDO)                 -->
     <!-- ======================================================= -->
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P392Q5B6Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-1P392Q5B6Q');
     </script>
-    <!-- ======================================================= -->
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -38,11 +36,15 @@
                         ink: '#1A1918',
                         muted: '#6E6B66',
                         accent: '#A39171',
-                        accentLight: '#C4B499'
+                        accentLight: '#C4B499',
+                        brandBlue: '#1E3A5F'
                     },
                     fontFamily: {
                         display: ['"Playfair Display"', 'serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    animation: {
+                        'spin-slow': 'spin 3s linear infinite',
                     }
                 }
             }
@@ -51,22 +53,21 @@
 
     <style>
         body { background-color: #F9F8F6; color: #1A1918; overflow-x: hidden; }
-        .glass-header { 
-            background: rgba(255, 255, 255, 0.9); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px); 
-            border-bottom: 1px solid rgba(163, 145, 113, 0.1); 
-        }
-        .hero-bg { background-color: #1A1918; }
-        .fade-in { animation: fadeIn 1.5s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .noise-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+        .glass-header { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(163, 145, 113, 0.2); }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: 0 8px 32px -8px rgba(0,0,0,0.05); transition: all 0.4s ease; }
+        .glass-card:hover { transform: translateY(-5px); border-color: rgba(163, 145, 113, 0.4); }
     </style>
 </head>
-<body class="antialiased font-sans">
+<body class="antialiased font-sans selection:bg-accent selection:text-white">
+
+    <div class="noise-overlay"></div>
 
     <!-- Cabeçalho -->
-    <header class="fixed w-full top-0 z-50 glass-header px-6 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <header class="fixed w-full top-0 z-50 pt-4 px-4 md:px-6 transition-all duration-300 pointer-events-none" id="header-wrapper">
+        <div id="header-bg" class="absolute inset-0 mx-4 md:mx-6 mt-4 rounded-full transition-all duration-500 pointer-events-none opacity-0"></div>
+        <div id="header-inner" class="relative max-w-7xl mx-auto h-20 px-6 flex items-center justify-between rounded-full transition-all duration-500 pointer-events-auto">
+            
             <a href="#" class="flex items-center gap-3 transition-transform hover:scale-105">
                 <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-auto text-ink">
                     <g fill="currentColor">
@@ -87,6 +88,12 @@
                 </div>
             </a>
             
+            <nav class="hidden lg:flex gap-8 text-sm font-medium tracking-wide text-muted">
+                <a href="#dor" class="hover:text-accent transition-colors">Para Quem É</a>
+                <a href="#servicos" class="hover:text-accent transition-colors">Áreas de Defesa</a>
+                <a href="#especialista" class="hover:text-accent transition-colors">O Escritório</a>
+            </nav>
+
             <a href="https://wa.me/5544991492775" target="_blank" class="bg-accent text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-lg shadow-accent/20 transition-all hover:bg-ink">
                 Solicitar Análise
             </a>
@@ -94,67 +101,130 @@
     </header>
 
     <!-- Seção Hero -->
-    <section class="min-h-screen flex items-center justify-center hero-bg pt-20 relative overflow-hidden text-center text-white">
-        <div class="absolute inset-0 opacity-25">
-            <img src="https://images.unsplash.com/photo-1505664177922-90226dd18c5e?auto=format&fit=crop&q=80&w=2000" alt="[Escritório Jurídico Premium]" class="w-full h-full object-cover">
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-ink">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1505664177922-90226dd18c5e?auto=format&fit=crop&q=80&w=2000" alt="[Imagem de Fundo Jurídica]" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/80 to-ink"></div>
         </div>
-        
-        <div class="relative z-10 px-6 max-w-4xl fade-in">
-            <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-accentLight text-[10px] font-bold tracking-widest uppercase">
-                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                Defesa Estratégica do Patrimônio
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="hero-el inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-accentLight text-xs font-bold tracking-widest uppercase">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent animate-pulse"></span>
+                Alta Performance Jurídica <span class="mx-2 opacity-40">|</span> Sigilo Absoluto
             </div>
             
-            <h1 class="font-display text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            <h1 class="hero-el font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.05]">
                 A defesa técnica do <br>
                 <span class="italic text-accentLight font-normal">seu patrimônio.</span>
             </h1>
             
-            <p class="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-2xl mx-auto">
-                Especialista na Lei do Superendividamento. Protegemos o que levou uma vida para construir contra abusos bancários e dívidas impagáveis.
+            <p class="hero-el max-w-3xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-12">
+                Atuação especializada na Lei do Superendividamento. Analisamos contratos, evitamos abusos bancários e reestruturamos o seu passivo com absoluto sigilo.
             </p>
             
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://wa.me/5544991492775" target="_blank" class="w-full sm:w-auto bg-accent text-white px-10 py-4 rounded-sm text-lg font-bold shadow-2xl transition-all hover:scale-105 hover:bg-white hover:text-ink">
+            <div class="hero-el flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://wa.me/5544991492775" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-accent text-white font-bold text-lg rounded-sm hover:bg-white hover:text-ink transition-all duration-300 shadow-2xl">
                     Agendar Diagnóstico Sigiloso
                 </a>
             </div>
         </div>
-        
-        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-cream to-transparent"></div>
+    </section>
+
+    <!-- Métricas -->
+    <section class="py-16 bg-white relative z-20 border-y border-ink/5">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-ink/10">
+            <div class="pt-8 md:pt-0">
+                <p class="text-5xl font-display font-bold text-ink">+R$ <span class="counter" data-target="15">0</span>M</p>
+                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2">Dívidas Analisadas</p>
+            </div>
+            <div class="pt-8 md:pt-0">
+                <p class="text-5xl font-display font-bold text-ink">+<span class="counter" data-target="300">0</span></p>
+                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2">Famílias Protegidas</p>
+            </div>
+            <div class="pt-8 md:pt-0">
+                <p class="text-5xl font-display font-bold text-ink">100%</p>
+                <p class="text-xs text-accent font-bold tracking-[0.2em] uppercase mt-2">Sigilo Profissional</p>
+            </div>
+        </div>
     </section>
 
     <!-- Áreas de Atuação -->
-    <section id="servicos" class="py-24 bg-cream px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-accent/5 transition-transform hover:-translate-y-2">
-                <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent mx-auto mb-6 text-2xl">⚖️</div>
-                <h3 class="font-display text-xl font-bold mb-4">Lei do Superendividamento</h3>
-                <p class="text-muted text-sm leading-relaxed">Repactuação de dívidas para garantir o seu mínimo existencial e a dignidade da sua família.</p>
+    <section id="servicos" class="py-32 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-4">Especialidades</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-ink">Soluções para Crises Financeiras</h2>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-accent/5 transition-transform hover:-translate-y-2">
-                <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent mx-auto mb-6 text-2xl">🏛️</div>
-                <h3 class="font-display text-xl font-bold mb-4">Revisão de Juros</h3>
-                <p class="text-muted text-sm leading-relaxed">Análise técnica de contratos bancários para identificação de taxas abusivas e cobranças ilegais.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-2xl border border-accent/10">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">⚖️</div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-ink">Superendividamento</h3>
+                    <p class="text-muted text-sm leading-relaxed">Repactuação de dívidas sob a Lei 14.181/2021 para garantir o seu mínimo existencial.</p>
+                </div>
+                <div class="glass-card p-10 rounded-2xl border border-accent/10">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">🏛️</div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-ink">Abusos Bancários</h3>
+                    <p class="text-muted text-sm leading-relaxed">Revisão técnica de juros e tarifas ilegais em contratos de financiamento e cartões.</p>
+                </div>
+                <div class="glass-card p-10 rounded-2xl border border-accent/10">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-8 text-3xl">🛡️</div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-ink">Blindagem de Bens</h3>
+                    <p class="text-muted text-sm leading-relaxed">Proteção estratégica contra penhoras e execuções judiciais de imóveis e veículos.</p>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-accent/5 transition-transform hover:-translate-y-2">
-                <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent mx-auto mb-6 text-2xl">🛡️</div>
-                <h3 class="font-display text-xl font-bold mb-4">Blindagem Patrimonial</h3>
-                <p class="text-muted text-sm leading-relaxed">Proteção jurídica estratégica contra penhoras e execuções judiciais que ameaçam os seus bens.</p>
+        </div>
+    </section>
+
+    <!-- O Especialista -->
+    <section id="especialista" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <div class="reveal flex-1 relative order-2 lg:order-1">
+                    <div class="relative h-[650px] w-full rounded-sm overflow-hidden bg-cream p-3 shadow-2xl">
+                        <img src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira" class="w-full h-full object-cover object-top rounded shadow-inner" style="filter: contrast(1.05) brightness(0.95);">
+                        <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 border-l-4 border-accent shadow-xl">
+                            <p class="font-display text-xl text-ink font-bold mb-1">Dr. José Carlos Prestes Vieira</p>
+                            <p class="text-xs text-accent tracking-[0.2em] font-bold uppercase">OAB/PR 118.596 • Maringá/PR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal flex-1 order-1 lg:order-2">
+                    <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-6">O Especialista</p>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-ink mb-8 leading-tight">
+                        "A advocacia tradicional pergunta quanto você deve. <span class="italic text-muted font-normal">Nós perguntamos como proteger o seu futuro.</span>"
+                    </h2>
+                    <p class="text-muted text-lg font-light leading-relaxed mb-8">
+                        Com base em Maringá e atuação em todo o Brasil, focamos no Direito Bancário de alta complexidade. Nossa missão é devolver a dignidade financeira a quem se viu sufocado pelo sistema bancário.
+                    </p>
+                    <div class="grid grid-cols-2 gap-10 border-t border-ink/5 pt-10">
+                        <div>
+                            <p class="font-bold text-ink text-lg mb-2">Atendimento Digital</p>
+                            <p class="text-sm text-muted">Processos 100% online para clientes de qualquer região.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-ink text-lg mb-2">Análise Técnica</p>
+                            <p class="text-sm text-muted">Cada contrato é periciado individualmente por nossa equipe.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-ink py-12 px-6 text-center border-t border-white/5">
-        <p class="text-white/40 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
-            Dr. José Carlos Prestes Vieira • OAB/PR 118.596
-        </p>
-        <div class="w-12 h-[1px] bg-accent/30 mx-auto mb-4"></div>
-        <p class="text-white/20 text-[9px] max-w-sm mx-auto leading-relaxed">
-            Maringá/PR • Atendimento em todo o território nacional. <br>
-            Este conteúdo tem caráter informativo e não substitui consulta jurídica.
-        </p>
+    <footer class="bg-ink py-20 px-6 text-center border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-white/40 text-[11px] font-bold tracking-[0.3em] uppercase mb-6">
+                Dr. José Carlos P. Vieira • OAB/PR 118.596
+            </p>
+            <div class="w-16 h-[1px] bg-accent/30 mx-auto mb-8"></div>
+            <p class="text-white/20 text-[10px] leading-relaxed max-w-sm mx-auto uppercase tracking-wider">
+                Maringá/PR • Atendimento Nacional Sigiloso <br>
+                Este site possui caráter exclusivamente informativo.
+            </p>
+        </div>
     </footer>
 
     <!-- Scripts de Animação -->
@@ -162,12 +232,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        gsap.from(".fade-in", { opacity: 0, y: 30, duration: 1.2, ease: "power2.out" });
-        
-        gsap.utils.toArray('.bg-white').forEach(card => {
-            gsap.from(card, {
-                scrollTrigger: { trigger: card, start: "top 90%" },
-                opacity: 0, y: 40, duration: 1, ease: "power2.out"
+
+        // Header Background
+        window.addEventListener('scroll', () => {
+            const headerBg = document.getElementById('header-bg');
+            if (window.scrollY > 50) {
+                headerBg.classList.add('glass-header', 'opacity-100');
+            } else {
+                headerBg.classList.remove('glass-header', 'opacity-100');
+            }
+        });
+
+        // Hero Animation
+        gsap.from(".hero-el", { y: 40, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power3.out" });
+
+        // Scroll Reveal
+        gsap.utils.toArray('.reveal').forEach(el => {
+            gsap.from(el, { 
+                scrollTrigger: { trigger: el, start: "top 85%" },
+                y: 50, opacity: 0, duration: 1.2, ease: "power2.out" 
+            });
+        });
+
+        // Counter Logic
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 90%",
+                onEnter: () => {
+                    let current = 0;
+                    const increment = target / 100;
+                    const update = () => {
+                        current += increment;
+                        if(current < target) {
+                            counter.innerText = Math.ceil(current);
+                            setTimeout(update, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    update();
+                }
             });
         });
     </script>
