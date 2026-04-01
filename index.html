@@ -10,7 +10,7 @@
     <meta name="author" content="Dr. José Carlos Prestes Vieira">
     
     <!-- ======================================================= -->
-    <!-- RASTREAMENTO GOOGLE ANALYTICS (MANTIDO)                 -->
+    <!-- RASTREAMENTO GOOGLE ANALYTICS (ID: G-1P392Q5B6Q)        -->
     <!-- ======================================================= -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P392Q5B6Q"></script>
     <script>
@@ -19,6 +19,7 @@
       gtag('js', new Date());
       gtag('config', 'G-1P392Q5B6Q');
     </script>
+    <!-- ======================================================= -->
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +45,14 @@
                         sans: ['"Plus Jakarta Sans"', 'sans-serif']
                     },
                     animation: {
+                        'marquee': 'marquee 25s linear infinite',
                         'spin-slow': 'spin 3s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        }
                     }
                 }
             }
@@ -57,9 +65,11 @@
         .glass-header { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(163, 145, 113, 0.2); }
         .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: 0 8px 32px -8px rgba(0,0,0,0.05); transition: all 0.4s ease; }
         .glass-card:hover { transform: translateY(-5px); border-color: rgba(163, 145, 113, 0.4); }
+        .typing-caret { display: inline-block; width: 2px; height: 1.2em; background-color: #A39171; vertical-align: middle; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
-<body class="antialiased font-sans selection:bg-accent selection:text-white">
+<body class="antialiased font-sans selection:bg-accent selection:text-white relative">
 
     <div class="noise-overlay"></div>
 
@@ -91,6 +101,7 @@
             <nav class="hidden lg:flex gap-8 text-sm font-medium tracking-wide text-muted">
                 <a href="#dor" class="hover:text-accent transition-colors">Para Quem É</a>
                 <a href="#servicos" class="hover:text-accent transition-colors">Áreas de Defesa</a>
+                <a href="#metodo" class="hover:text-accent transition-colors">Estratégia</a>
                 <a href="#especialista" class="hover:text-accent transition-colors">O Escritório</a>
             </nav>
 
@@ -176,6 +187,50 @@
         </div>
     </section>
 
+    <!-- Manifesto / Método -->
+    <section id="metodo" class="py-32 bg-ink text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-20">
+                <div class="reveal flex-1">
+                    <p class="text-accent text-sm font-bold tracking-[0.3em] uppercase mb-8">Nossa Filosofia</p>
+                    <h2 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-10">Rigor técnico para quem busca <span class="italic text-accentLight">liberdade financeira.</span></h2>
+                    <p class="text-gray-400 text-lg font-light leading-relaxed mb-12">Não apenas contestamos números; analisamos a legalidade de cada cláusula e protegemos o sustento da sua família com base no Direito Bancário de vanguarda.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            </div>
+                            <p class="text-gray-300">Diagnóstico preliminar de viabilidade técnica.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            </div>
+                            <p class="text-gray-300">Cálculos periciais para identificação de anatocismo.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full border border-accent flex items-center justify-center shrink-0 mt-1">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            </div>
+                            <p class="text-gray-300">Acompanhamento processual personalizado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal flex-1 relative hidden md:block">
+                    <div class="absolute inset-0 bg-accent/20 blur-[120px] rounded-full"></div>
+                    <div class="relative border border-white/10 rounded-2xl p-12 bg-white/5 backdrop-blur-sm">
+                        <div class="text-accent text-6xl font-display italic mb-6">"</div>
+                        <p class="text-2xl font-display leading-relaxed text-gray-200">A proteção do patrimônio não é sorte, é o resultado de uma estratégia jurídica inabalável.</p>
+                        <div class="mt-10 flex items-center gap-4">
+                            <div class="w-12 h-[1px] bg-accent"></div>
+                            <p class="text-sm font-bold tracking-widest uppercase text-accent">JCPV Advocacia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- O Especialista -->
     <section id="especialista" class="py-32 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
@@ -196,16 +251,16 @@
                         "A advocacia tradicional pergunta quanto você deve. <span class="italic text-muted font-normal">Nós perguntamos como proteger o seu futuro.</span>"
                     </h2>
                     <p class="text-muted text-lg font-light leading-relaxed mb-8">
-                        Com base em Maringá e atuação em todo o Brasil, focamos no Direito Bancário de alta complexidade. Nossa missão é devolver a dignidade financeira a quem se viu sufocado pelo sistema bancário.
+                        Com base em Maringá e atuação em todo o Brasil, focamos no Direito Bancário de alta complexidade. Nossa missão é devolver a dignidade financeira a quem se viu sufocado pelo sistema bancário através de soluções pautadas na Lei 14.181/2021.
                     </p>
                     <div class="grid grid-cols-2 gap-10 border-t border-ink/5 pt-10">
                         <div>
                             <p class="font-bold text-ink text-lg mb-2">Atendimento Digital</p>
-                            <p class="text-sm text-muted">Processos 100% online para clientes de qualquer região.</p>
+                            <p class="text-sm text-muted">Processos 100% online para clientes de qualquer região do Brasil.</p>
                         </div>
                         <div>
                             <p class="font-bold text-ink text-lg mb-2">Análise Técnica</p>
-                            <p class="text-sm text-muted">Cada contrato é periciado individualmente por nossa equipe.</p>
+                            <p class="text-sm text-muted">Cada contrato é periciado individualmente por nossa equipe técnica.</p>
                         </div>
                     </div>
                 </div>
@@ -222,7 +277,7 @@
             <div class="w-16 h-[1px] bg-accent/30 mx-auto mb-8"></div>
             <p class="text-white/20 text-[10px] leading-relaxed max-w-sm mx-auto uppercase tracking-wider">
                 Maringá/PR • Atendimento Nacional Sigiloso <br>
-                Este site possui caráter exclusivamente informativo.
+                Este site possui caráter exclusivamente informativo conforme normas da OAB.
             </p>
         </div>
     </footer>
@@ -233,7 +288,7 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Header Background
+        // Header Background Transition
         window.addEventListener('scroll', () => {
             const headerBg = document.getElementById('header-bg');
             if (window.scrollY > 50) {
@@ -243,18 +298,30 @@
             }
         });
 
-        // Hero Animation
-        gsap.from(".hero-el", { y: 40, opacity: 0, duration: 1.2, stagger: 0.2, ease: "power3.out" });
+        // Hero Content Animation
+        gsap.from(".hero-el", { 
+            y: 40, 
+            opacity: 0, 
+            duration: 1.2, 
+            stagger: 0.2, 
+            ease: "power3.out" 
+        });
 
-        // Scroll Reveal
+        // Scroll Reveal Animations
         gsap.utils.toArray('.reveal').forEach(el => {
             gsap.from(el, { 
-                scrollTrigger: { trigger: el, start: "top 85%" },
-                y: 50, opacity: 0, duration: 1.2, ease: "power2.out" 
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%"
+                },
+                y: 50, 
+                opacity: 0, 
+                duration: 1.2, 
+                ease: "power2.out" 
             });
         });
 
-        // Counter Logic
+        // Counter Animation Logic
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
@@ -264,16 +331,16 @@
                 onEnter: () => {
                     let current = 0;
                     const increment = target / 100;
-                    const update = () => {
+                    const updateCounter = () => {
                         current += increment;
                         if(current < target) {
                             counter.innerText = Math.ceil(current);
-                            setTimeout(update, 20);
+                            setTimeout(updateCounter, 20);
                         } else {
                             counter.innerText = target;
                         }
                     };
-                    update();
+                    updateCounter();
                 }
             });
         });
