@@ -66,6 +66,48 @@
     }
     </script>
 
+    <!-- Dados Estruturados (FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O banco pode penhorar o meu único imóvel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em regra, a lei protege o bem de família, mas existem exceções que merecem atenção. Uma análise dos contratos é o caminho para avaliar a proteção do imóvel no caso concreto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Eles podem reter grande parte do meu salário?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A retenção abusiva da renda é combatida pela jurisprudência. A atuação jurídica pode buscar a limitação dos descontos e a preservação do mínimo existencial, conforme o caso concreto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Lei do Superendividamento ajuda a limpar o meu nome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A repactuação das dívidas e a suspensão de cobranças podem levar, entre outros efeitos, à regularização do nome junto aos órgãos de proteção ao crédito. Cada caso é avaliado individualmente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa a defesa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O primeiro passo é uma conversa inicial sobre o caso. Os honorários são definidos com clareza e transparência, de acordo com a complexidade da demanda."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -231,7 +273,7 @@
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center mt-10">
             <div class="hero-el inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-accentLight text-xs font-bold tracking-widest uppercase shadow-sm">
                 <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                Alta Performance Jurídica <span class="mx-2 opacity-40">|</span> Sigilo Absoluto
+                Atuação Técnica em Direito Bancário <span class="mx-2 opacity-40">|</span> Sigilo Absoluto
             </div>
 
             <h1 class="hero-el font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.05] drop-shadow-2xl">
@@ -358,7 +400,7 @@
                         <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                         <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
                     </div>
-                    <div class="text-xs text-muted font-mono tracking-widest uppercase">Diagnóstico Prévio do Caso</div>
+                    <div class="text-xs text-muted font-mono tracking-widest uppercase">Triagem Informativa Inicial</div>
                     <div class="w-10"></div>
                 </div>
                 <div class="p-8 bg-black/60 rounded-b-xl min-h-[300px] flex flex-col relative">
@@ -498,7 +540,7 @@
                     <div class="flex gap-1 text-yellow-500 mb-6" aria-label="5 de 5 estrelas">
                         ★ ★ ★ ★ ★
                     </div>
-                    <p class="text-muted text-lg italic leading-relaxed mb-6">"Fui enganada num empréstimo abusivo que consumia grande parte da minha pensão. A equipa da JCPV aplicou a Lei do Superendividamento e hoje pago uma parcela justa. Profissionalismo e sigilo total."</p>
+                    <p class="text-muted text-lg italic leading-relaxed mb-6">"Fui enganada num empréstimo abusivo que consumia grande parte da minha pensão. A equipe da JCPV aplicou a Lei do Superendividamento e hoje pago uma parcela justa. Profissionalismo e sigilo total."</p>
                     <div>
                         <p class="text-ink font-bold font-display">A. C. Ribeiro</p>
                         <p class="text-xs text-accent tracking-widest uppercase">Aposentada • São Paulo</p>
@@ -767,14 +809,44 @@
                         </div>
                     </div>
 
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1" for="comprometimento">A renda está comprometida?</label>
+                            <select id="comprometimento" name="comprometimento" class="w-full bg-black/40 border border-white/10 rounded px-4 py-3 text-gray-300 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors">
+                                <option>Prefiro informar no atendimento</option>
+                                <option>Sim, há descontos ou cobranças recorrentes</option>
+                                <option>Não, mas há risco de cobrança judicial</option>
+                                <option>Não sei avaliar</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1" for="processo">Já existe processo ou notificação?</label>
+                            <select id="processo" name="processo" class="w-full bg-black/40 border border-white/10 rounded px-4 py-3 text-gray-300 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors">
+                                <option>Prefiro informar no atendimento</option>
+                                <option>Sim, já existe processo judicial</option>
+                                <option>Sim, recebi notificação/cobrança</option>
+                                <option>Ainda não</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <button type="submit" class="whatsapp-track w-full bg-accent hover:bg-accentLight text-white font-medium py-4 rounded transition-colors duration-300 relative overflow-hidden group">
-                        <span class="relative z-10">Enviar Solicitação Urgente</span>
+                        <span class="relative z-10">Solicitar Contato Sigiloso</span>
                         <div class="absolute inset-0 h-full w-full bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                     </button>
 
                     <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-center gap-3 text-gray-400 text-xs">
                         <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        <span>Proteção Absoluta de Dados e Sigilo Profissional (Art. 36, CED OAB)</span>
+                        <span>Proteção de dados e sigilo profissional (Art. 36, CED OAB)</span>
+                    </div>
+
+                    <div class="mt-6 rounded-lg border border-white/10 bg-black/20 p-5 text-sm text-gray-300">
+                        <p class="font-display text-lg text-white font-bold mb-3">O que acontece depois?</p>
+                        <ol class="space-y-2 list-decimal list-inside text-gray-400">
+                            <li>O escritório recebe as informações iniciais com sigilo.</li>
+                            <li>Você é contatado pelo WhatsApp para alinhamento documental.</li>
+                            <li>A viabilidade jurídica é avaliada antes de qualquer estratégia ou honorário.</li>
+                        </ol>
                     </div>
                 </form>
             </div>
@@ -804,8 +876,16 @@
         </div>
     </footer>
 
+    <!-- CTA fixo mobile para campanhas -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-ink/95 backdrop-blur-xl border-t border-accent/20 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+        <a href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" rel="noopener noreferrer" aria-label="Falar com advogado pelo WhatsApp" class="whatsapp-track flex w-full items-center justify-center gap-2 rounded-sm bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_30px_rgba(37,211,102,0.25)]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar com advogado pelo WhatsApp
+        </a>
+    </div>
+
     <!-- FAB Enriquecido (WhatsApp) -->
-    <div class="fixed bottom-6 right-6 z-50 flex items-center group">
+    <div class="fixed bottom-6 right-6 z-50 hidden md:flex items-center group">
         <div class="hidden md:block mr-4 bg-white text-ink text-sm font-bold px-4 py-2 rounded-full shadow-lg opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 border border-ink/5 pointer-events-none">
             Fale com o Advogado Agora
         </div>
@@ -826,9 +906,9 @@
             <h3 class="font-display text-2xl font-bold text-ink mb-4">Política de Privacidade</h3>
             <div class="text-sm text-muted space-y-4">
                 <p>A JCPV Advocacia respeita a sua privacidade. Esta política demonstra o nosso compromisso com a proteção de dados (LGPD).</p>
-                <p><strong>1. Recolha de Dados:</strong> Recolhemos apenas as informações fornecidas voluntariamente por si (nome, telefone, caso jurídico) através dos botões de WhatsApp e formulários do nosso site.</p>
-                <p><strong>2. Uso das Informações:</strong> As suas informações são utilizadas exclusivamente para o contactar de volta e avaliar a viabilidade jurídica do seu caso. Garantimos absoluto sigilo profissional, nos termos do Código de Ética da OAB.</p>
-                <p><strong>3. Partilha:</strong> Não vendemos, alugamos ou partilhamos as suas informações com terceiros sob nenhuma circunstância.</p>
+                <p><strong>1. Coleta de Dados:</strong> Coletamos apenas as informações fornecidas voluntariamente por você (nome, telefone e resumo do caso jurídico) por meio dos botões de WhatsApp e formulários do nosso site.</p>
+                <p><strong>2. Uso das Informações:</strong> As suas informações são utilizadas exclusivamente para entrar em contato com você e avaliar a viabilidade jurídica do seu caso. Garantimos absoluto sigilo profissional, nos termos do Código de Ética da OAB.</p>
+                <p><strong>3. Compartilhamento:</strong> Não vendemos, alugamos ou compartilhamos as suas informações com terceiros sob nenhuma circunstância.</p>
                 <p><strong>4. Segurança:</strong> Adotamos medidas de segurança rígidas para proteger os seus dados contra acessos não autorizados.</p>
             </div>
             <button type="button" onclick="toggleModal('privacyModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full font-bold">Compreendido</button>
@@ -840,9 +920,9 @@
             <button type="button" onclick="toggleModal('termsModal')" aria-label="Fechar" class="absolute top-4 right-4 text-gray-500 hover:text-ink"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             <h3 class="font-display text-2xl font-bold text-ink mb-4">Termos de Uso</h3>
             <div class="text-sm text-muted space-y-4">
-                <p>Ao aceder ao site da JCPV Advocacia, concorda em cumprir estes termos de serviço.</p>
+                <p>Ao acessar o site da JCPV Advocacia, concorda em cumprir estes termos de serviço.</p>
                 <p><strong>1. Uso de Informações:</strong> O conteúdo deste site é puramente informativo e não substitui uma consulta jurídica formal. A leitura deste material não estabelece uma relação cliente-advogado.</p>
-                <p><strong>2. O Orientador de Temas:</strong> A ferramenta interativa presente no site apenas indica qual tema jurídico pode estar relacionado ao relato do utilizador. Não constitui análise do caso, parecer legal, nem promessa ou garantia de resultado.</p>
+                <p><strong>2. O Orientador de Temas:</strong> A ferramenta interativa presente no site apenas indica qual tema jurídico pode estar relacionado ao relato do usuário. Não constitui análise do caso, parecer legal, nem promessa ou garantia de resultado.</p>
                 <p><strong>3. Propriedade Intelectual:</strong> Todo o conteúdo, logotipos e textos deste site são propriedade da JCPV Advocacia. É proibida a reprodução sem autorização.</p>
             </div>
             <button type="button" onclick="toggleModal('termsModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full font-bold">Aceitar e Fechar</button>
@@ -876,16 +956,126 @@
             }
         }
 
+        // Captura de UTMs e eventos de conversão para campanhas
+        const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+        const urlParams = new URLSearchParams(window.location.search);
+        const campaignStorage = {
+            get(key) {
+                try {
+                    return window.localStorage.getItem(key);
+                } catch (error) {
+                    return null;
+                }
+            },
+            set(key, value) {
+                try {
+                    window.localStorage.setItem(key, value);
+                } catch (error) {
+                    // Em alguns navegadores/modos privados o localStorage pode ser bloqueado.
+                    // Nesses casos, a página deve continuar funcionando sem persistir a origem.
+                }
+            },
+            remove(key) {
+                try {
+                    window.localStorage.removeItem(key);
+                } catch (error) {
+                    // Ignora: remoção só é necessária quando o armazenamento está disponível.
+                }
+            }
+        };
+
+        function readStoredCampaign() {
+            try {
+                return JSON.parse(campaignStorage.get('jcpvCampaign') || '{}');
+            } catch (error) {
+                campaignStorage.remove('jcpvCampaign');
+                return {};
+            }
+        }
+        const storedCampaign = readStoredCampaign();
+        const currentCampaign = { ...storedCampaign };
+        UTM_KEYS.forEach((key) => {
+            const value = urlParams.get(key);
+            if (value) currentCampaign[key] = value;
+        });
+        if (Object.keys(currentCampaign).length > 0) {
+            campaignStorage.set('jcpvCampaign', JSON.stringify(currentCampaign));
+        }
+
+        function trackEvent(eventName, params = {}) {
+            const payload = { ...currentCampaign, ...params };
+            if (typeof gtag === 'function') {
+                gtag('event', eventName, payload);
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: eventName, ...payload });
+        }
+
+        function campaignLines() {
+            const entries = Object.entries(currentCampaign);
+            if (!entries.length) return [];
+            return ['Origem da campanha:', ...entries.map(([key, value]) => `${key}: ${value}`)];
+        }
+
+        function buildWhatsAppUrl(message) {
+            const params = new URLSearchParams({ text: message });
+            return `https://wa.me/5544991492775?${params.toString()}`;
+        }
+
+        function storePendingLeadUrl(url) {
+            try {
+                window.sessionStorage.setItem('jcpvPendingWhatsappUrl', url);
+            } catch (error) {
+                // Se o sessionStorage estiver indisponível, a página de obrigado usa uma mensagem padrão.
+            }
+        }
+
+        function appendCampaignToWhatsAppLinks() {
+            const lines = campaignLines();
+            if (!lines.length) return;
+            document.querySelectorAll('a.whatsapp-track[href*="wa.me"]').forEach((link) => {
+                try {
+                    const url = new URL(link.href);
+                    const existingText = url.searchParams.get('text') || '';
+                    const campaignSuffix = `\n\n${lines.join('\n')}`;
+                    if (!existingText.includes('Origem da campanha:')) {
+                        url.searchParams.set('text', `${existingText}${campaignSuffix}`);
+                        link.href = url.toString();
+                    }
+                } catch (error) {
+                    // Mantém o CTA original caso o navegador não consiga interpretar a URL.
+                }
+            });
+        }
+        appendCampaignToWhatsAppLinks();
+
+        document.querySelectorAll('a.whatsapp-track').forEach((link, index) => {
+            link.addEventListener('click', () => {
+                trackEvent('whatsapp_click', {
+                    link_position: index + 1,
+                    link_text: (link.textContent || '').trim().slice(0, 80)
+                });
+            });
+        });
+
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+            link.addEventListener('click', () => trackEvent('phone_click', { link_text: link.textContent.trim() }));
+        });
+
+        document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+            link.addEventListener('click', () => trackEvent('email_click', { link_text: link.textContent.trim() }));
+        });
+
         // Lógica do Banner de Cookies (LGPD)
         const cookieBanner = document.getElementById('cookie-banner');
         const acceptCookiesBtn = document.getElementById('accept-cookies');
 
-        if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+        if (cookieBanner && !campaignStorage.get('cookiesAccepted')) {
             setTimeout(() => { cookieBanner.classList.remove('translate-y-full'); }, 1500);
         }
         if (acceptCookiesBtn) {
             acceptCookiesBtn.addEventListener('click', () => {
-                localStorage.setItem('cookiesAccepted', 'true');
+                campaignStorage.set('cookiesAccepted', 'true');
                 cookieBanner.classList.add('translate-y-full');
             });
         }
@@ -940,7 +1130,7 @@
 
         // Lógica do "Orientador de Temas Jurídicos"
         // IMPORTANTE: esta ferramenta apenas identifica o TEMA jurídico relacionado ao relato.
-        // Não avalia o caso nem chances de êxito. A resposta varia conforme as palavras do utilizador,
+        // Não avalia o caso nem chances de êxito. A resposta varia conforme as palavras do usuário,
         // evitando qualquer sugestão de garantia de resultado (conformidade com o Código de Ética da OAB).
         const aiBtn = document.getElementById('ai-btn');
         const aiInput = document.getElementById('ai-input');
@@ -997,6 +1187,7 @@
                     aiResultText.innerHTML = '<strong class="text-accentLight">TEMA IDENTIFICADO:</strong> ' + resultado.titulo + '<br><br>' + resultado.texto;
                     aiLoader.classList.add('hidden');
                     aiResult.classList.remove('hidden');
+                    trackEvent('ai_tool_completed', { tema_identificado: resultado.titulo });
                 }, 2000);
             });
         }
@@ -1021,15 +1212,32 @@
         if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => { if (link) link.addEventListener('click', toggleMenu); });
 
-        // Lógica do Formulário de Contacto
+        // Lógica do Formulário de Contato
         const leadForm = document.getElementById('lead-form');
         if (leadForm) {
             leadForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const nomeElem = document.getElementById('nome'); const assuntoElem = document.getElementById('assunto');
-                const nome = nomeElem ? nomeElem.value : ''; const assunto = assuntoElem ? assuntoElem.value : '';
-                const mensagem = `Olá, o meu nome é *${nome}*. Gostaria de agendar um diagnóstico estratégico sigiloso.%0A%0A*Motivo Principal:* ${assunto}%0A%0AVim através do website.`;
-                window.open(`https://wa.me/5544991492775?text=${mensagem}`, '_blank');
+                const nomeElem = document.getElementById('nome');
+                const assuntoElem = document.getElementById('assunto');
+                const comprometimentoElem = document.getElementById('comprometimento');
+                const processoElem = document.getElementById('processo');
+                const nome = nomeElem ? nomeElem.value.trim() : '';
+                const assunto = assuntoElem ? assuntoElem.value : '';
+                const comprometimento = comprometimentoElem ? comprometimentoElem.value : '';
+                const processo = processoElem ? processoElem.value : '';
+                trackEvent('lead_form_submit', { assunto, comprometimento, processo });
+                const linhasMensagem = [
+                    `Olá, o meu nome é *${nome}*. Gostaria de agendar um diagnóstico estratégico sigiloso.`,
+                    '',
+                    `Motivo Principal: ${assunto}`,
+                    `Renda comprometida: ${comprometimento}`,
+                    `Processo ou notificação: ${processo}`,
+                    '',
+                    'Vim através do website.',
+                    ...campaignLines()
+                ];
+                storePendingLeadUrl(buildWhatsAppUrl(linhasMensagem.join('\n')));
+                window.location.href = 'obrigado.html';
             });
         }
 
