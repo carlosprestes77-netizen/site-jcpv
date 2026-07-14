@@ -1238,6 +1238,7 @@
                 ];
                 storePendingLeadUrl(buildWhatsAppUrl(linhasMensagem.join('\n')));
                 window.location.href = 'obrigado.html';
+                window.open(buildWhatsAppUrl(linhasMensagem.join('\n')), '_blank');
             });
         }
 
