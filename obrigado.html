@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação recebida | JCPV Advocacia</title>
+    <meta name="description" content="Solicitação recebida pela JCPV Advocacia. Continue o atendimento sigiloso pelo WhatsApp.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.jcpvadvocacia.com.br/obrigado.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P392Q5B6Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1P392Q5B6Q');
+      gtag('event', 'lead_thank_you_view');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F9F8F6',
+                        ink: '#1A1918',
+                        muted: '#6E6B66',
+                        accent: '#A39171',
+                        accentLight: '#C4B499'
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-ink text-white font-sans antialiased">
+    <main class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-16">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,145,113,0.22)_0%,transparent_58%)]"></div>
+        <div class="relative z-10 w-full max-w-2xl rounded-2xl border border-white/10 bg-white/[0.06] p-8 md:p-12 shadow-2xl backdrop-blur-xl text-center">
+            <p class="text-accentLight text-xs font-bold tracking-[0.28em] uppercase mb-5">Solicitação recebida</p>
+            <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Obrigado pelo contato.
+            </h1>
+            <p class="text-white/70 text-lg leading-relaxed mb-8">
+                As suas informações iniciais foram preparadas com sigilo. Para concluir o envio e iniciar o atendimento, continue a conversa pelo WhatsApp.
+            </p>
+
+            <a id="continue-whatsapp" href="https://wa.me/5544991492775?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20JCPV%20Advocacia%20e%20gostaria%20de%20continuar%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="inline-flex w-full sm:w-auto items-center justify-center rounded-sm bg-[#25D366] px-8 py-4 text-base font-bold text-white transition hover:bg-[#20bd5a] hover:scale-[1.02]">
+                Continuar pelo WhatsApp
+            </a>
+
+            <div class="mt-8 rounded-lg border border-white/10 bg-black/20 p-5 text-left">
+                <p class="font-display text-xl font-bold mb-3">Próximos passos</p>
+                <ol class="space-y-2 list-decimal list-inside text-white/60 text-sm">
+                    <li>Envie a mensagem pré-preenchida pelo WhatsApp.</li>
+                    <li>Aguarde o retorno para alinhamento inicial e documentos.</li>
+                    <li>A viabilidade jurídica será avaliada antes da definição de estratégia e honorários.</li>
+                </ol>
+            </div>
+
+            <a href="/" class="mt-8 inline-block text-sm text-white/50 hover:text-accentLight transition">
+                Voltar ao site
+            </a>
+        </div>
+    </main>
+
+    <script>
+        const continueButton = document.getElementById('continue-whatsapp');
+        try {
+            const pendingUrl = window.sessionStorage.getItem('jcpvPendingWhatsappUrl');
+            if (pendingUrl) {
+                continueButton.href = pendingUrl;
+                window.sessionStorage.removeItem('jcpvPendingWhatsappUrl');
+            }
+        } catch (error) {
+            // Mantém o link padrão caso o sessionStorage não esteja disponível.
+        }
+
+        continueButton.addEventListener('click', () => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'thank_you_whatsapp_click' });
+            if (typeof gtag === 'function') {
+                gtag('event', 'thank_you_whatsapp_click');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -66,6 +66,48 @@
     }
     </script>
 
+    <!-- Dados Estruturados (FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O banco pode penhorar o meu único imóvel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em regra, a lei protege o bem de família, mas existem exceções que merecem atenção. Uma análise dos contratos é o caminho para avaliar a proteção do imóvel no caso concreto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Eles podem reter grande parte do meu salário?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A retenção abusiva da renda é combatida pela jurisprudência. A atuação jurídica pode buscar a limitação dos descontos e a preservação do mínimo existencial, conforme o caso concreto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Lei do Superendividamento ajuda a limpar o meu nome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A repactuação das dívidas e a suspensão de cobranças podem levar, entre outros efeitos, à regularização do nome junto aos órgãos de proteção ao crédito. Cada caso é avaliado individualmente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa a defesa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O primeiro passo é uma conversa inicial sobre o caso. Os honorários são definidos com clareza e transparência, de acordo com a complexidade da demanda."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -864,9 +906,9 @@
             <h3 class="font-display text-2xl font-bold text-ink mb-4">Política de Privacidade</h3>
             <div class="text-sm text-muted space-y-4">
                 <p>A JCPV Advocacia respeita a sua privacidade. Esta política demonstra o nosso compromisso com a proteção de dados (LGPD).</p>
-                <p><strong>1. Recolha de Dados:</strong> Recolhemos apenas as informações fornecidas voluntariamente por si (nome, telefone, caso jurídico) através dos botões de WhatsApp e formulários do nosso site.</p>
-                <p><strong>2. Uso das Informações:</strong> As suas informações são utilizadas exclusivamente para o contactar de volta e avaliar a viabilidade jurídica do seu caso. Garantimos absoluto sigilo profissional, nos termos do Código de Ética da OAB.</p>
-                <p><strong>3. Partilha:</strong> Não vendemos, alugamos ou partilhamos as suas informações com terceiros sob nenhuma circunstância.</p>
+                <p><strong>1. Coleta de Dados:</strong> Coletamos apenas as informações fornecidas voluntariamente por você (nome, telefone e resumo do caso jurídico) por meio dos botões de WhatsApp e formulários do nosso site.</p>
+                <p><strong>2. Uso das Informações:</strong> As suas informações são utilizadas exclusivamente para entrar em contato com você e avaliar a viabilidade jurídica do seu caso. Garantimos absoluto sigilo profissional, nos termos do Código de Ética da OAB.</p>
+                <p><strong>3. Compartilhamento:</strong> Não vendemos, alugamos ou compartilhamos as suas informações com terceiros sob nenhuma circunstância.</p>
                 <p><strong>4. Segurança:</strong> Adotamos medidas de segurança rígidas para proteger os seus dados contra acessos não autorizados.</p>
             </div>
             <button type="button" onclick="toggleModal('privacyModal')" class="mt-8 px-6 py-2 bg-ink text-white rounded-md hover:bg-accent transition-colors w-full font-bold">Compreendido</button>
@@ -978,6 +1020,14 @@
         function buildWhatsAppUrl(message) {
             const params = new URLSearchParams({ text: message });
             return `https://wa.me/5544991492775?${params.toString()}`;
+        }
+
+        function storePendingLeadUrl(url) {
+            try {
+                window.sessionStorage.setItem('jcpvPendingWhatsappUrl', url);
+            } catch (error) {
+                // Se o sessionStorage estiver indisponível, a página de obrigado usa uma mensagem padrão.
+            }
         }
 
         function appendCampaignToWhatsAppLinks() {
@@ -1186,6 +1236,8 @@
                     'Vim através do website.',
                     ...campaignLines()
                 ];
+                storePendingLeadUrl(buildWhatsAppUrl(linhasMensagem.join('\n')));
+                window.location.href = 'obrigado.html';
                 window.open(buildWhatsAppUrl(linhasMensagem.join('\n')), '_blank');
             });
         }
