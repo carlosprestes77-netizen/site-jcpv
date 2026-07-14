@@ -642,13 +642,11 @@
                 <div class="reveal flex-1 relative order-2 lg:order-1">
                     <div class="relative h-[650px] w-full rounded-sm overflow-hidden bg-cream p-4 border border-ink/5">
 
-                        <!-- Foto real do advogado, já existente no repositório (imagem_9c8938.png / image_9c8938.png).
-                             O onerror tenta as duas grafias do nome e, se ambas falharem, exibe um placeholder elegante. -->
+                        <!-- Foto real do advogado, já existente no repositório. -->
                         <img src="image_9c8938.png" alt="Dr. José Carlos Prestes Vieira, advogado especialista em Direito Bancário" class="w-full h-full object-cover object-top rounded shadow-inner" style="filter: contrast(1.05) brightness(0.95);" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='imagem_9c8938.png';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
                         <div class="photo-fallback absolute inset-4 rounded bg-ink hidden flex-col items-center justify-center text-center px-6" aria-hidden="true">
                             <svg viewBox="0 0 140 140" class="w-32 h-32 text-accent/60 mb-6"><use href="#jcpv-logo"></use></svg>
                             <p class="text-accentLight font-display text-xl">Dr. José Carlos Prestes Vieira</p>
-                            <p class="text-white/40 text-xs mt-3 font-mono">[ foto do advogado a ser adicionada ]</p>
                         </div>
 
                         <div class="absolute bottom-10 left-10 right-10 bg-white/90 backdrop-blur-md p-6 border-l-4 border-l-accent shadow-xl">
