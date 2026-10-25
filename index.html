@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="triagem.css">
+    <script src="triagem.js" defer></script>
     <title>JCPV Advocacia | A defesa técnica do seu patrimônio</title>
 
     <!-- SEO Meta Tags -->
@@ -216,6 +218,7 @@
                         <a href="https://wa.me/5544988198287?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20com%20a%20JCPV%20Advocacia." target="_blank" rel="noopener" class="whatsapp-track w-full sm:w-auto px-8 py-4 bg-accent text-white font-medium text-lg rounded-sm hover:bg-white hover:text-ink transition-all duration-300 shadow-[0_10px_30px_rgba(163,145,113,0.3)]">
                             Solicitar Análise de Viabilidade
                         </a>
+                        <button type="button" data-open-triagem class="triagem-entry">Responder à pré-qualificação →</button>
                     </div>
 
                     <div class="hero-el flex flex-wrap justify-center lg:justify-start gap-6 md:gap-8 opacity-80 border-t border-white/10 pt-8">
@@ -785,6 +788,7 @@
 
                 <!-- Links Legais Obrigatórios para Google/Facebook Ads -->
                 <div class="mt-4 flex flex-wrap justify-center md:justify-end gap-4 text-xs text-gray-600">
+                    <button type="button" data-open-triagem class="triagem-footer-entry">Pré-qualificação de atendimento</button>
                     <a href="/politica-de-privacidade" class="hover:text-accent transition-colors">Política de Privacidade</a>
                     <span>•</span>
                     <a href="/termos-de-uso" class="hover:text-accent transition-colors">Termos de Uso</a>
@@ -809,6 +813,85 @@
     </div>
 
     <!-- Modais Legais (Privacidade e Termos) -->
+    <dialog id="triagem-dialog" aria-labelledby="triagem-title" aria-describedby="triagem-description">
+        <div class="triagem-heading">
+            <p class="triagem-eyebrow">JCPV ADVOCACIA · ATENDIMENTO</p>
+            <button type="button" id="triagem-close" aria-label="Fechar pré-qualificação">×</button>
+            <h2 id="triagem-title">Vamos entender seu caso?</h2>
+            <p id="triagem-description">Responda algumas perguntas para a equipe da JCPV direcionar seu atendimento.</p>
+        </div>
+        <form id="triagem-form" method="dialog" novalidate autocomplete="off">
+            <p id="triagem-progress" class="triagem-progress" aria-live="polite">Etapa 1 de 2 · Sobre você</p>
+            <section data-triagem-step="0" aria-label="Sobre você">
+                <label class="triagem-label" for="triagem-name">Primeiro nome</label>
+                <input id="triagem-name" type="text" maxlength="50" required aria-describedby="triagem-name-error" placeholder="Como podemos chamar você?">
+                <p id="triagem-name-error" class="triagem-error" hidden></p>
+                <fieldset aria-describedby="triagem-profession-error">
+                    <legend>Vínculo profissional</legend>
+                    <div class="triagem-options">
+                        <label><input type="radio" name="triagem-profession" value="Policial militar" required><span>Policial militar</span></label>
+                        <label><input type="radio" name="triagem-profession" value="Outro servidor público"><span>Outro servidor público</span></label>
+                        <label><input type="radio" name="triagem-profession" value="Aposentado ou pensionista"><span>Aposentado ou pensionista</span></label>
+                        <label><input type="radio" name="triagem-profession" value="Trabalhador CLT"><span>Trabalhador CLT</span></label>
+                        <label><input type="radio" name="triagem-profession" value="Outro"><span>Outro</span></label>
+                    </div>
+                    <p id="triagem-profession-error" class="triagem-error" hidden></p>
+                </fieldset>
+            </section>
+            <section data-triagem-step="1" aria-label="Renda e estado" hidden>
+                <fieldset aria-describedby="triagem-income-hint triagem-income-error">
+                    <legend>Renda mensal bruta, antes dos descontos</legend>
+                    <div class="triagem-options">
+                        <label><input type="radio" name="triagem-income" value="Abaixo de R$ 4.500" required><span>Abaixo de R$ 4.500</span></label>
+                        <label><input type="radio" name="triagem-income" value="R$ 4.500 ou mais"><span>R$ 4.500 ou mais</span></label>
+                        <label><input type="radio" name="triagem-income" value="Não sei informar"><span>Não sei informar</span></label>
+                        <label><input type="radio" name="triagem-income" value="Prefiro informar à equipe"><span>Prefiro informar à equipe</span></label>
+                    </div>
+                    <p id="triagem-income-error" class="triagem-error" hidden></p>
+                    <p id="triagem-income-hint" class="triagem-hint">A renda é declarada, sem comprovação nesta etapa. A faixa serve para direcionar o atendimento e não é um requisito legal.</p>
+                </fieldset>
+                <label class="triagem-label" for="triagem-state">Estado onde reside</label>
+                <select id="triagem-state" required aria-describedby="triagem-state-error">
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">AC — Acre</option><option value="AL">AL — Alagoas</option>
+                    <option value="AP">AP — Amapá</option><option value="AM">AM — Amazonas</option>
+                    <option value="BA">BA — Bahia</option><option value="CE">CE — Ceará</option>
+                    <option value="DF">DF — Distrito Federal</option><option value="ES">ES — Espírito Santo</option>
+                    <option value="GO">GO — Goiás</option><option value="MA">MA — Maranhão</option>
+                    <option value="MT">MT — Mato Grosso</option><option value="MS">MS — Mato Grosso do Sul</option>
+                    <option value="MG">MG — Minas Gerais</option><option value="PA">PA — Pará</option>
+                    <option value="PB">PB — Paraíba</option><option value="PR">PR — Paraná</option>
+                    <option value="PE">PE — Pernambuco</option><option value="PI">PI — Piauí</option>
+                    <option value="RJ">RJ — Rio de Janeiro</option><option value="RN">RN — Rio Grande do Norte</option>
+                    <option value="RS">RS — Rio Grande do Sul</option><option value="RO">RO — Rondônia</option>
+                    <option value="RR">RR — Roraima</option><option value="SC">SC — Santa Catarina</option>
+                    <option value="SP">SP — São Paulo</option><option value="SE">SE — Sergipe</option>
+                    <option value="TO">TO — Tocantins</option>
+                </select>
+                <p id="triagem-state-error" class="triagem-error" hidden></p>
+                <p class="triagem-hint">Você pode continuar com qualquer vínculo, faixa de renda ou estado.</p>
+            </section>
+            <p class="triagem-privacy">As respostas direcionam o atendimento e compõem a mensagem que você poderá enviar ao escritório. No WhatsApp, toque em <strong>Enviar</strong>. <a href="/politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade (nova aba)</a>.</p>
+            <div class="triagem-actions">
+                <button type="button" id="triagem-back" class="triagem-secondary" hidden>Voltar</button>
+                <button type="submit" id="triagem-next" class="triagem-primary">Continuar</button>
+            </div>
+        </form>
+        <section id="triagem-handoff" hidden aria-labelledby="triagem-handoff-title">
+            <h3 id="triagem-handoff-title" tabindex="-1">Sua mensagem está pronta</h3>
+            <p>Para concluir o contato, toque em <strong>Enviar dentro do WhatsApp</strong>. A abertura do aplicativo não confirma o envio.</p>
+            <p>O WhatsApp não abriu? Tente novamente ou copie a mensagem abaixo e envie para o escritório: <strong>+55 (44) 98819-8287</strong>.</p>
+            <label class="triagem-label" for="triagem-message">Mensagem para o escritório</label>
+            <textarea id="triagem-message" rows="9" readonly></textarea>
+            <div class="triagem-actions triagem-fallback-actions">
+                <button type="button" id="triagem-retry" class="triagem-primary">Tentar abrir novamente</button>
+                <button type="button" id="triagem-copy" class="triagem-secondary">Copiar mensagem</button>
+            </div>
+            <p id="triagem-copy-status" role="status" class="triagem-hint"></p>
+            <button type="button" id="triagem-edit" class="triagem-text-button">Voltar às respostas</button>
+        </section>
+    </dialog>
+
     <div id="privacyModal" class="fixed inset-0 z-[2000] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8 relative">
             <button type="button" onclick="toggleModal('privacyModal')" aria-label="Fechar" class="absolute top-4 right-4 text-gray-500 hover:text-ink"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
