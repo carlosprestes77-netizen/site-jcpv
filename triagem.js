@@ -19,7 +19,9 @@
         .replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/[\s_]+/g, '-');
     const origin = new Map([
         ['o-plantao-termina', 'O plantão termina'],
-        ['anos-de-servico', 'Anos de serviço']
+        ['anos-de-servico', 'Anos de serviço'],
+        ['video-seguranca-publica', 'Vídeo Segurança Pública'],
+        ['video-saude', 'Vídeo Saúde']
     ]).get(campaign) || 'site';
     let step = 0;
     let returnFocus;
